@@ -10,11 +10,21 @@
 
 // variables
 
-let name = "shahriar";
-let age = 24;
-let email = "shahriar.azad123@gmail.com";
+// let name = "shahriar";
+// let age = 24;
+// let email = "shahriar.azad123@gmail.com";
 
 
-console.log(`My name is ${name}`);
-console.log(`My age is ${age}`);
-console.log(`My email is ${email}`);
+// console.log(`My name is ${name}`);
+// console.log(`My age is ${age}`);
+// console.log(`My email is ${email}`);
+
+
+// data types
+
+let isOnline = true;
+
+let isSale = false;
+
+console.log(isOnline);
+console.log(isSale);
