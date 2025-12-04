@@ -41,20 +41,44 @@
 
 // arithmatic operations
 
-let age = 10;
-console.log(age += 1);
-console.log(age -=1 );
-console.log(age *= 2);
-console.log(age /= 2);
+// let age = 10;
+// console.log(age += 1);
+// console.log(age -=1 );
+// console.log(age *= 2);
+// console.log(age /= 2);
 
 
 // operator precendences
 
 // (), exponents, multiplication, divison, modulus, addition, substraction
 
-let result = 1 + (2 * 4) + 7 - (3 * 5) - (8 ** 2);
+// let result = 1 + (2 * 4) + 7 - (3 * 5) - (8 ** 2);
 
-console.log(result)
+// console.log(result)
+
+
+// user inputs
+
+/*
+1. Window Prompt
+2. Html Textbox
+
+
+*/
+
+// let userName = window.prompt("Whats ur name?")
+
+// console.log(userName);
+
+let userName;
+
+
+document.getElementById('submitButton').onclick = function(){
+    userName = document.getElementById('textInput').value;
+    console.log(userName);
+    document.getElementById('myH1').textContent = `Hello ${userName}`;
+}
+
 
 
 
