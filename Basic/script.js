@@ -52,7 +52,10 @@
 
 // user inputs
 
+
 /*
+
+
 1. Window Prompt
 2. Html Textbox
 
@@ -120,22 +123,33 @@
 //   ).textContent = `Your radius is: ${circumerefence}`;
 // };
 
-let count = 0;
+
+// Counter Function-------------
+// let count = 0;
 
 
-function increase(){
-    count += 1;
-    document.getElementById('btn2').textContent = count;
-}
+// function increase(){
+//     count += 1;
+//     document.getElementById('btn2').textContent = count;
+// }
 
-function decrease(){
-    if(count > 0)
-    count -= 1;
-    document.getElementById('btn2').textContent = count;
+// function decrease(){
+//     if(count > 0)
+//     count -= 1;
+//     document.getElementById('btn2').textContent = count;
 
-}
+// }
 
-function reset(){
-    count = 0;
-    document.getElementById('btn2').textContent = count;
-}
+// function reset(){
+//     count = 0;
+//     document.getElementById('btn2').textContent = count;
+// }
+
+
+
+
+document.getElementById('roll').addEventListener("click", function(){
+    const number = Math.random()
+    document.getElementById('randomNum').textContent = number;
+
+})
