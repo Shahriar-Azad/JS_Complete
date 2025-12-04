@@ -83,39 +83,50 @@
 // type conversions
 
 
-const cgpa = 2;
-const floatCgpa = 2.5;
-const stringCgpa = "2";
-const isAge = true;
+// const cgpa = 2;
+// const floatCgpa = 2.5;
+// const stringCgpa = "2";
+// const isAge = true;
 
-console.log(typeof isAge, isAge);
-
-
-let age = window.prompt('Whats ur age?');
-
-age = Number(age)
-
-age+=2
-
-console.log(age)
+// console.log(typeof isAge, isAge);
 
 
+// let age = window.prompt('Whats ur age?');
 
-let a = "Mark";
-let b = "Mark";
-let c = "Mark";
+// age = Number(age)
 
+// age+=2
 
-a = Number(a);
-b = String(b);
-c = Boolean(c)
+// console.log(age)
 
 
-console.log(a, typeof a)
-console.log(b, typeof b)
-console.log(c, typeof c)
+
+// let a = "Mark";
+// let b = "Mark";
+// let c = "Mark";
 
 
+// a = Number(a);
+// b = String(b);
+// c = Boolean(c)
+
+
+// console.log(a, typeof a)
+// console.log(b, typeof b)
+// console.log(c, typeof c)
+
+
+// const = a variable that cant change
+
+const pi = 3.14169;
+
+let radius;
+let circumerefence;
+
+radius = window.prompt("whats the radius?");
+radius = Number(radius)
+circumerefence = 2 * pi * radius;
+console.log(circumerefence);
 
 
 
