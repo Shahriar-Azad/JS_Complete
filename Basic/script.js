@@ -22,9 +22,21 @@
 
 // data types
 
-let isOnline = true;
+// let isOnline = true;
 
-let isSale = false;
+// let isSale = false;
 
-console.log(isOnline);
-console.log(isSale);
+// console.log(isOnline);
+// console.log(isSale);
+
+
+let name = "Shihab";
+let age = 20;
+let mail = "shihab123@gmail.com";
+
+
+document.getElementById('p1').textContent = `My name is ${name}`;
+document.getElementById('p2').textContent = `My age is ${age}`;
+document.getElementById('p3').textContent = `My email is ${mail}`;
+
+
