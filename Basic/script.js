@@ -148,8 +148,42 @@
 
 
 
-document.getElementById('roll').addEventListener("click", function(){
-    const number = Math.random()
-    document.getElementById('randomNum').textContent = number;
+// document.getElementById('roll').addEventListener("click", function(){
+//     const number = Math.random()
+//     document.getElementById('randomNum').textContent = number;
 
+// })
+
+// document.getElementById('img').style.display = "none";
+
+// document.getElementById('roll').addEventListener("click", function(){
+//     document.getElementById('img').style.display = "block";
+//     document.getElementById('roll').textContent = "hide";
+//     document.getElementById('roll').addEventListener('click', function(){
+//          document.getElementById('roll').textContent = "Click";
+//             document.getElementById('img').style.display = "none";
+//     })
+
+
+
+// })
+
+const img = document.getElementById('img');
+const roll = document.getElementById('roll');
+
+img.style.display = "none";
+
+
+roll.addEventListener("click", function(){
+    if(img.style.display === "none"){
+        img.style.display = "block";
+        roll.textContent = "Hide";
+    }
+    else{
+        img.style.display = "none";
+        roll.textContent = "Click";
+    }
+    
 })
+
+
