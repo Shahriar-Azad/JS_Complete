@@ -70,14 +70,51 @@
 
 // console.log(userName);
 
-let userName;
+// let userName;
 
 
-document.getElementById('submitButton').onclick = function(){
-    userName = document.getElementById('textInput').value;
-    console.log(userName);
-    document.getElementById('myH1').textContent = `Hello ${userName}`;
-}
+// document.getElementById('submitButton').onclick = function(){
+//     userName = document.getElementById('textInput').value;
+//     console.log(userName);
+//     document.getElementById('myH1').textContent = `Hello ${userName}`;
+// }
+
+
+// type conversions
+
+
+const cgpa = 2;
+const floatCgpa = 2.5;
+const stringCgpa = "2";
+const isAge = true;
+
+console.log(typeof isAge, isAge);
+
+
+let age = window.prompt('Whats ur age?');
+
+age = Number(age)
+
+age+=2
+
+console.log(age)
+
+
+
+let a = "Mark";
+let b = "Mark";
+let c = "Mark";
+
+
+a = Number(a);
+b = String(b);
+c = Boolean(c)
+
+
+console.log(a, typeof a)
+console.log(b, typeof b)
+console.log(c, typeof c)
+
 
 
 
