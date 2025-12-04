@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Basic Javascript</title>
     <link rel="stylesheet" href="style.css">
+      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body>
     <!-- <h1 id="myH1">Welcome</h1> -->
@@ -16,11 +17,20 @@
     <!-- <input type="text" name="" id="textInput">
     <button type="submit" id="submitButton">Submit</button> -->
 
-
+<!-- 
     <h2 id="radiusH2">Here is the Radius calculation...</h2>
     <label for="form">Radius</label>
     <input type="text" name="" id="radiusInput">
-    <button type="submit" id="radiusSubmit">Calculate</button>
+    <button type="submit" id="radiusSubmit">Calculate</button> -->
+
+    <div class="flex justify-content-center align-items-center">
+
+    <button class="border bg-white p-10 m-10 fw-bold text-3xl cursor-pointer" id="btn1" onclick="increase()">+</button>
+    <button class="border bg-white p-10 m-10 fw-bold text-3xl cursor-pointer" id="btn2">0</button>
+    <button class="border bg-white p-10 m-10 text-3xl fw-bold cursor-pointer" id="btn3" onclick="decrease()">-</button>
+    <button class="border bg-white p-10 m-10 text-3xl fw-bold cursor-pointer" id="btn4" onclick="reset()">RESET</button>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>

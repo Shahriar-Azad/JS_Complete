@@ -102,20 +102,40 @@
 
 // const = a variable that cant change
 
-const pi = 3.14169;
+// const pi = 3.14169;
 
-let radius;
-let circumerefence;
+// let radius;
+// let circumerefence;
 
-document.getElementById("radiusSubmit").style.backgroundColor = "black";
-document.getElementById("radiusSubmit").style.color = "white";
-document.getElementById("radiusSubmit").style.cursor = "pointer";
+// document.getElementById("radiusSubmit").style.backgroundColor = "black";
+// document.getElementById("radiusSubmit").style.color = "white";
+// document.getElementById("radiusSubmit").style.cursor = "pointer";
 
-document.getElementById("radiusSubmit").onclick = function () {
-  radius = document.getElementById("radiusInput").value;
-  radius = Number(radius);
-  circumerefence = 2 * pi * radius;
-  document.getElementById(
-    "radiusH2"
-  ).textContent = `Your radius is: ${circumerefence}`;
-};
+// document.getElementById("radiusSubmit").onclick = function () {
+//   radius = document.getElementById("radiusInput").value;
+//   radius = Number(radius);
+//   circumerefence = 2 * pi * radius;
+//   document.getElementById(
+//     "radiusH2"
+//   ).textContent = `Your radius is: ${circumerefence}`;
+// };
+
+let count = 0;
+
+
+function increase(){
+    count += 1;
+    document.getElementById('btn2').textContent = count;
+}
+
+function decrease(){
+    if(count > 0)
+    count -= 1;
+    document.getElementById('btn2').textContent = count;
+
+}
+
+function reset(){
+    count = 0;
+    document.getElementById('btn2').textContent = count;
+}
