@@ -52,7 +52,6 @@
 
 // user inputs
 
-
 /*
 
 
@@ -123,10 +122,8 @@
 //   ).textContent = `Your radius is: ${circumerefence}`;
 // };
 
-
 // Counter Function-------------
 // let count = 0;
-
 
 // function increase(){
 //     count += 1;
@@ -145,9 +142,6 @@
 //     document.getElementById('btn2').textContent = count;
 // }
 
-
-
-
 // document.getElementById('roll').addEventListener("click", function(){
 //     const number = Math.random()
 //     document.getElementById('randomNum').textContent = number;
@@ -164,26 +158,80 @@
 //             document.getElementById('img').style.display = "none";
 //     })
 
+// })
+
+// const img = document.getElementById('img');
+// const roll = document.getElementById('roll');
+
+// img.style.display = "none";
+
+// roll.addEventListener("click", function(){
+//     if(img.style.display === "none"){
+//         img.style.display = "block";
+//         roll.textContent = "Hide";
+//     }
+//     else{
+//         img.style.display = "none";
+//         roll.textContent = "Click";
+//     }
+
+// })
+
+// const mytext = document.getElementById("ageInp");
+// const mybtn = document.getElementById("ageBtn");
+// const result = document.getElementById("myH1");
+
+// let age;
+
+// mybtn.onclick = function () {
+//   age = mytext.value;
+//   age = Number(age);
+
+//   if (age > 100) {
+//     result.textContent = `You are too old to enter this website`;
+//   } else if (age == 0) {
+//     result.textContent = `You cant enter you just born`;
+//   } else if (age >= 18) {
+//     result.textContent = `You can enter this website`;
+//   } else if (age < 0) {
+//     result.textContent = `Your age cant be below 0`;
+//   } else {
+//     result.textContent = `You must be 18+ to enter this website`;
+//   }
+// };
+
+
+
+// document.getElementById('ageBtn').addEventListener('click', function(){
+//     let age = Number(document.getElementById('ageInp').value);
+    
+
+//     if (age > 100) {
+//     document.getElementById('myH1').textContent = `You are too old to enter this website`;
+//   } else if (age == 0) {
+//     document.getElementById('myH1').textContent = `You cant enter you just born`;
+//   } else if (age >= 18) {
+//     document.getElementById('myH1').textContent = `You can enter this website`;
+//   } else if (age < 0) {
+//     document.getElementById('myH1').textContent = `Your age cant be below 0`;
+//   } else {
+//     document.getElementById('myH1').textContent = `You must be 18+ to enter this website`;
+//   }
 
 
 // })
 
-const img = document.getElementById('img');
-const roll = document.getElementById('roll');
+// optimized version
+document.getElementById("ageBtn").addEventListener("click", () => {
+  const age = Number(document.getElementById("ageInp").value);
+  const result = document.getElementById("myH1");
 
-img.style.display = "none";
+  let message =
+    age > 100 ? "You are too old to enter this website" :
+    age === 0 ? "You can't enter, you just born" :
+    age >= 18 ? "You can enter this website" :
+    age < 0 ? "Your age can't be below 0" :
+    "You must be 18+ to enter this website";
 
-
-roll.addEventListener("click", function(){
-    if(img.style.display === "none"){
-        img.style.display = "block";
-        roll.textContent = "Hide";
-    }
-    else{
-        img.style.display = "none";
-        roll.textContent = "Click";
-    }
-    
-})
-
-
+  result.textContent = message;
+});
