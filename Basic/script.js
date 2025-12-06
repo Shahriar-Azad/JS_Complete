@@ -238,3 +238,4 @@
 
 
 document.querySelector(".subBtn").innerHTML = "Subscribe"
+document.querySelector(".subBtn").innerHTML = "Subscribed"
