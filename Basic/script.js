@@ -222,16 +222,19 @@
 // })
 
 // optimized version
-document.getElementById("ageBtn").addEventListener("click", () => {
-  const age = Number(document.getElementById("ageInp").value);
-  const result = document.getElementById("myH1");
+// document.getElementById("ageBtn").addEventListener("click", () => {
+//   const age = Number(document.getElementById("ageInp").value);
+//   const result = document.getElementById("myH1");
 
-  let message =
-    age > 100 ? "You are too old to enter this website" :
-    age === 0 ? "You can't enter, you just born" :
-    age >= 18 ? "You can enter this website" :
-    age < 0 ? "Your age can't be below 0" :
-    "You must be 18+ to enter this website";
+//   let message =
+//     age > 100 ? "You are too old to enter this website" :
+//     age === 0 ? "You can't enter, you just born" :
+//     age >= 18 ? "You can enter this website" :
+//     age < 0 ? "Your age can't be below 0" :
+//     "You must be 18+ to enter this website";
 
-  result.textContent = message;
-});
+//   result.textContent = message;
+// });
+
+
+document.querySelector(".subBtn").innerHTML = "Subscribe"
