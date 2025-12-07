@@ -247,8 +247,15 @@
 
 // sub(10,20)
 
-function mul(a,b){
-    return a*b;
+// function mul(a,b){
+//     return a*b;
+// }
+
+// mul(10,20)
+
+
+function divide(a,b){
+    return a/b;
 }
 
-mul(10,20)
+divide(10,20)
