@@ -261,4 +261,43 @@
 // divide(10,20)
 
 
-console.log("hello world")
+// console.log("hello world")
+
+const rock = document.getElementById('rock')
+const paper = document.getElementById('paper')
+const scissor = document.getElementById('scissor')
+
+
+
+let comp = ["rock", "paper", "scissor"];
+
+rock.addEventListener("click", function(){
+    const randomChoice = comp[Math.floor(Math.random()* comp.length)];
+    document.getElementById('myH1').textContent = randomChoice;
+
+    let user = "rock";
+
+    let computer = randomChoice;
+
+    let result = "";
+
+    if (user === computer){
+        result = "Its a draw";
+
+    }
+    else if((user === "rock" && computer === "scissor")){
+        result = "You win";
+
+
+    }
+
+    else {
+        result = "You lose"
+    }
+
+
+    document.getElementById("result").textContent = result;
+    
+
+})
+
