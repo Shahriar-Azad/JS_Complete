@@ -237,5 +237,12 @@
 // });
 
 
-document.querySelector(".subBtn").innerHTML = "Subscribe"
-document.querySelector(".subBtn").innerHTML = "Subscribed"
+// document.querySelector(".subBtn").innerHTML = "Subscribe"
+// document.querySelector(".subBtn").innerHTML = "Subscribed"
+
+
+function sub(a,b){
+    return a - b;
+}
+
+sub(10,20)
