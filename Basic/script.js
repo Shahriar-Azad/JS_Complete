@@ -254,8 +254,11 @@
 // mul(10,20)
 
 
-function divide(a,b){
-    return a/b;
-}
+// function divide(a,b){
+//     return a/b;
+// }
 
-divide(10,20)
+// divide(10,20)
+
+
+console.log("hello world")
