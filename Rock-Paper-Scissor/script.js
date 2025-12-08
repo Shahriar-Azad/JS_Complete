@@ -1,38 +1,55 @@
-const rock = document.getElementById('rock');
-const paper = document.getElementById('paper');
-const scissor = document.getElementById('scissor');
+// const rock = document.getElementById('rock');
+// const paper = document.getElementById('paper');
+// const scissor = document.getElementById('scissor');
 
-let computerPick = ["rock", "paper", "scissor"];
+// let computerPick = ["rock", "paper", "scissor"];
 
-function playGame(userChoice){
-    const randomChoice = computerPick[Math.floor(Math.random()* computerPick.length)]
+// function playGame(userChoice){
+//     const randomChoice = computerPick[Math.floor(Math.random() * computerPick.length)];
 
-    document.getElementById('myH1').textContent = `Computers Choice: ${randomChoice}`;
+//     document.getElementById('myH1').textContent = `Computers Choice: ${randomChoice}`;
 
-    let result = "";
+//     let result = "";
 
-    if(userChoice === randomChoice){
-        result = "Its a draw";
+//     if (userChoice === randomChoice) {
+//         result = "It's a draw";
+//     }
+//     else if (
+//         (userChoice === "rock" && randomChoice === "scissor") ||
+//         (userChoice === "paper" && randomChoice === "rock") ||
+//         (userChoice === "scissor" && randomChoice === "paper")
+//     ) {
+//         result = "You won";
+//     }
+//     else {
+//         result = "You lose";
+//     }
 
-    }
+//     document.getElementById('result').textContent = result;
+// }
 
-    else if(
-        (userChoice === "rock" && randomChoice === "paper") ||
-        (userChoice === "paper" && randomChoice === "rock") ||
-        (userChoice === "scissor" && randomChoice === "paper")
-    ){
-        result = "You won";
+// rock.addEventListener("click",()=> playGame("rock"));
+// paper.addEventListener("click",()=> playGame("paper"));
+// scissor.addEventListener("click",()=> playGame("scissor"));
 
-    }
 
-    else{
-        result = "You lose";
-    }
+const choices = ["rock", "paper", "scissor"];
 
-    document.getElementById('result').textContent = result;
+function playGame(userChoice) {
+  const comp = choices[Math.floor(Math.random()*3)];
+  document.getElementById("myH1").textContent = `Computers Choice: ${comp}`;
 
+  const result =
+    userChoice === comp ? "It's a draw" :
+    (userChoice === "rock" && comp === "scissor") ||
+    (userChoice === "paper" && comp === "rock") ||
+    (userChoice === "scissor" && comp === "paper")
+    ? "You won" : "You lose";
+
+  document.getElementById("result").textContent = result;
 }
 
-rock.addEventListener("click",()=> playGame("rock"));
-paper.addEventListener("click",()=> playGame("paper"));
-scissor.addEventListener("click",()=> playGame("scissor"));
+["rock","paper","scissor"].forEach(id =>
+  document.getElementById(id).onclick = () => playGame(id)
+);
+
