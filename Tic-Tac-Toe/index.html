@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tic Tac Toe — Vanilla HTML/CSS/JS</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <div class="wrap" role="application" aria-label="Tic Tac Toe game">
+    <header class="app-head">
+      <div>
+        <h1>Tic Tac Toe</h1>
+        <div class="sub">Pure HTML · CSS · Vanilla JS — click a cell or press 1–9</div>
+      </div>
+      <div class="sub">Two players — X goes first</div>
+    </header>
+
+    <section class="board-card" aria-label="Game board">
+      <div id="board" class="board" role="grid" aria-label="3 by 3 tic tac toe board">
+        <!-- 9 cells inserted by JS for accessibility -->
+      </div>
+
+      <div class="info" aria-live="polite">
+        <div class="status-row">
+          <div class="score">
+            <div class="box">Turn: <strong id="turn">X</strong></div>
+            <div class="box">X wins: <strong id="scoreX">0</strong></div>
+            <div class="box">O wins: <strong id="scoreO">0</strong></div>
+            <div class="box">Draws: <strong id="scoreD">0</strong></div>
+          </div>
+          <div class="message" id="message">Make a move</div>
+        </div>
+
+        <div class="controls">
+          <button id="restart" class="btn ghost" aria-label="Restart game">Restart</button>
+          <button id="resetScores" class="btn" aria-label="Reset scores">Reset scores</button>
+          <button id="undo" class="btn" aria-label="Undo last move">Undo</button>
+        </div>
+      </div>
+    </section>
+
+    <aside class="right-panel">
+      <h3>How to play</h3>
+      <p class="footer-note">Two players take turns placing their marks (X and O) in empty squares. First to get 3 in a row — horizontally, vertically, or diagonally — wins.</p>
+
+      <div class="legend">
+        <div class="item"><span class="dot x">X</span><div class="sub">Player X</div></div>
+        <div class="item"><span class="dot o">O</span><div class="sub">Player O</div></div>
+      </div>
+
+      <div style="margin-top:12px">
+        <strong>Shortcuts</strong>
+        <ul class="sub" style="margin:6px 0;padding-left:18px">
+          <li>Press keys 1–9 to play (1 = top-left, 9 = bottom-right)</li>
+          <li>Press <kbd>R</kbd> to restart</li>
+        </ul>
+      </div>
+
+      <div class="footer-note">Built with accessibility and minimal JS in mind.</div>
+    </aside>
+  </div>
+
+</body>
+</html>

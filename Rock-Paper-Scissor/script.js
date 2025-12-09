@@ -56,5 +56,5 @@
 
 // one liner
 
-["rock","paper","scissor"].forEach(i=>document.getElementById(i).onclick=()=>{const c=["rock","paper","scissor"][Math.floor(Math.random()*3)];document.getElementById("myH1").textContent=`Computers Choice: ${c}`;document.getElementById("result").textContent=i===c?"It's a draw":(i==="rock"&&c==="scissor")||(i==="paper"&&c==="rock")||(i==="scissor"&&c==="paper")?"You won":"You lose";});
+// ["rock","paper","scissor"].forEach(i=>document.getElementById(i).onclick=()=>{const c=["rock","paper","scissor"][Math.floor(Math.random()*3)];document.getElementById("myH1").textContent=`Computers Choice: ${c}`;document.getElementById("result").textContent=i===c?"It's a draw":(i==="rock"&&c==="scissor")||(i==="paper"&&c==="rock")||(i==="scissor"&&c==="paper")?"You won":"You lose";});
 
