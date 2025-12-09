@@ -263,41 +263,60 @@
 
 // console.log("hello world")
 
-const rock = document.getElementById('rock')
-const paper = document.getElementById('paper')
-const scissor = document.getElementById('scissor')
+// const rock = document.getElementById('rock')
+// const paper = document.getElementById('paper')
+// const scissor = document.getElementById('scissor')
 
 
 
-let comp = ["rock", "paper", "scissor"];
+// let comp = ["rock", "paper", "scissor"];
 
-rock.addEventListener("click", function(){
-    const randomChoice = comp[Math.floor(Math.random()* comp.length)];
-    document.getElementById('myH1').textContent = randomChoice;
+// rock.addEventListener("click", function(){
+//     const randomChoice = comp[Math.floor(Math.random()* comp.length)];
+//     document.getElementById('myH1').textContent = randomChoice;
 
-    let user = "rock";
+//     let user = "rock";
 
-    let computer = randomChoice;
+//     let computer = randomChoice;
 
-    let result = "";
+//     let result = "";
 
-    if (user === computer){
-        result = "Its a draw";
+//     if (user === computer){
+//         result = "Its a draw";
 
-    }
-    else if((user === "rock" && computer === "scissor")){
-        result = "You win";
-
-
-    }
-
-    else {
-        result = "You lose"
-    }
+//     }
+//     else if((user === "rock" && computer === "scissor")){
+//         result = "You win";
 
 
-    document.getElementById("result").textContent = result;
+//     }
+
+//     else {
+//         result = "You lose"
+//     }
+
+
+//     document.getElementById("result").textContent = result;
     
+
+// })
+
+
+const character = document.getElementById("character-container")
+const tanjiro = document.getElementById("tanjiro");
+const nezuko = document.getElementById("nezuko");
+
+
+nezuko.style.display = "none";
+
+character.addEventListener("mouseover", ()=> {
+    tanjiro.style.display = "none";
+    nezuko.style.display = "block";
 
 })
 
+character.addEventListener("mouseleave", ()=> {
+    tanjiro.style.display = "block";
+        nezuko.style.display = "none";
+
+})
