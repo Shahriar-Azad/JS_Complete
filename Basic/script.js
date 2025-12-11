@@ -302,21 +302,62 @@
 // })
 
 
-const character = document.getElementById("character-container")
-const tanjiro = document.getElementById("tanjiro");
-const nezuko = document.getElementById("nezuko");
+// const character = document.getElementById("character-container")
+// const tanjiro = document.getElementById("tanjiro");
+// const nezuko = document.getElementById("nezuko");
 
 
-nezuko.style.display = "none";
+// nezuko.style.display = "none";
 
-character.addEventListener("mouseover", ()=> {
-    tanjiro.style.display = "none";
-    nezuko.style.display = "block";
+// character.addEventListener("mouseover", ()=> {
+//     tanjiro.style.display = "none";
+//     nezuko.style.display = "block";
 
-})
+// })
 
-character.addEventListener("mouseleave", ()=> {
-    tanjiro.style.display = "block";
-        nezuko.style.display = "none";
+// character.addEventListener("mouseleave", ()=> {
+//     tanjiro.style.display = "block";
+//         nezuko.style.display = "none";
 
-})
+// })
+
+
+
+
+const makeElementMovable = (selector) => {
+  const element = document.querySelector(selector);
+  if (!element) return;
+
+  // Set initial position (required for the code to work)
+  element.style.position = 'absolute';
+  let top = element.offsetTop;
+  let left = element.offsetLeft;
+  element.style.top = `${top}px`;
+  element.style.left = `${left}px`;
+
+  document.addEventListener('keydown', (e) => {
+    const step = 10; // Movement distance in pixels
+
+    switch (e.key) {
+      case 'ArrowUp':
+        e.preventDefault(); // Prevent default scroll behavior
+        top = Math.max(0, top - step); // Prevent moving off the top edge
+        break;
+      case 'ArrowDown':
+        e.preventDefault(); // Prevent default scroll behavior
+        top += step;
+        break;
+      default:
+        return; // Ignore other keys
+    }
+
+    element.style.top = `${top}px`;
+  });
+};
+
+// Example Usage:
+// 1. Create a div in your HTML: <div id="movable-line" style="width: 200px; height: 5px; background-color: red;"></div>
+// 2. Call the function after the DOM is loaded:
+document.addEventListener('DOMContentLoaded', () => {
+  makeElementMovable('#movable-line');
+});
