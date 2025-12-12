@@ -394,14 +394,27 @@
 // console.log(isOddOrEven(7));  // Odd
 
 
-function isPalindrome(num) {
-    const str = num.toString();
-    const reversed = str.split("").reverse().join("");
-    return str === reversed;
+// function isPalindrome(num) {
+//     const str = num.toString();
+//     const reversed = str.split("").reverse().join("");
+//     return str === reversed;
+// }
+
+// // Examples
+// console.log(isPalindrome(121));   // true
+// console.log(isPalindrome(123));   // false
+// console.log(isPalindrome(444));   // true
+// console.log(isPalindrome(987));   // false
+
+function isPalindromeWord(word) {
+    const cleaned = word.toLowerCase(); 
+    const reversed = cleaned.split("").reverse().join("");
+    return cleaned === reversed;
 }
 
 // Examples
-console.log(isPalindrome(121));   // true
-console.log(isPalindrome(123));   // false
-console.log(isPalindrome(444));   // true
-console.log(isPalindrome(987));   // false
+console.log(isPalindromeWord("level"));   // true
+console.log(isPalindromeWord("madam"));   // true
+console.log(isPalindromeWord("hello"));   // false
+console.log(isPalindromeWord("Racecar")); // true (case-insensitive)
+
