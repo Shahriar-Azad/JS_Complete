@@ -324,40 +324,58 @@
 
 
 
-const makeElementMovable = (selector) => {
-  const element = document.querySelector(selector);
-  if (!element) return;
+// const makeElementMovable = (selector) => {
+//   const element = document.querySelector(selector);
+//   if (!element) return;
 
-  // Set initial position (required for the code to work)
-  element.style.position = 'absolute';
-  let top = element.offsetTop;
-  let left = element.offsetLeft;
-  element.style.top = `${top}px`;
-  element.style.left = `${left}px`;
+//   // Set initial position (required for the code to work)
+//   element.style.position = 'absolute';
+//   let top = element.offsetTop;
+//   let left = element.offsetLeft;
+//   element.style.top = `${top}px`;
+//   element.style.left = `${left}px`;
 
-  document.addEventListener('keydown', (e) => {
-    const step = 10; // Movement distance in pixels
+//   document.addEventListener('keydown', (e) => {
+//     const step = 10; // Movement distance in pixels
 
-    switch (e.key) {
-      case 'ArrowUp':
-        e.preventDefault(); // Prevent default scroll behavior
-        top = Math.max(0, top - step); // Prevent moving off the top edge
-        break;
-      case 'ArrowDown':
-        e.preventDefault(); // Prevent default scroll behavior
-        top += step;
-        break;
-      default:
-        return; // Ignore other keys
-    }
+//     switch (e.key) {
+//       case 'ArrowUp':
+//         e.preventDefault(); // Prevent default scroll behavior
+//         top = Math.max(0, top - step); // Prevent moving off the top edge
+//         break;
+//       case 'ArrowDown':
+//         e.preventDefault(); // Prevent default scroll behavior
+//         top += step;
+//         break;
+//       default:
+//         return; // Ignore other keys
+//     }
 
-    element.style.top = `${top}px`;
-  });
-};
+//     element.style.top = `${top}px`;
+//   });
+// };
 
-// Example Usage:
-// 1. Create a div in your HTML: <div id="movable-line" style="width: 200px; height: 5px; background-color: red;"></div>
-// 2. Call the function after the DOM is loaded:
-document.addEventListener('DOMContentLoaded', () => {
-  makeElementMovable('#movable-line');
-});
+// // Example Usage:
+// // 1. Create a div in your HTML: <div id="movable-line" style="width: 200px; height: 5px; background-color: red;"></div>
+// // 2. Call the function after the DOM is loaded:
+// document.addEventListener('DOMContentLoaded', () => {
+//   makeElementMovable('#movable-line');
+// });
+
+
+
+const fs = require('fs');
+
+function randomCode() {
+    const words = ["alpha", "beta", "gamma", "delta", "omega"];
+    const num = Math.floor(Math.random() * 1000);
+
+    return `
+function ${words[Math.floor(Math.random() * words.length)]}${num}() {
+    return ${Math.floor(Math.random() * 9999)};
+}
+`;
+}
+
+fs.writeFileSync("random.js", randomCode());
+console.log("New random code generated!");
