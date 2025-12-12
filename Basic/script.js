@@ -364,18 +364,31 @@
 
 
 
-const fs = require('fs');
+// const fs = require('fs');
 
-function randomCode() {
-    const words = ["alpha", "beta", "gamma", "delta", "omega"];
-    const num = Math.floor(Math.random() * 1000);
+// function randomCode() {
+//     const words = ["alpha", "beta", "gamma", "delta", "omega"];
+//     const num = Math.floor(Math.random() * 1000);
 
-    return `
-function ${words[Math.floor(Math.random() * words.length)]}${num}() {
-    return ${Math.floor(Math.random() * 9999)};
+//     return `
+// function ${words[Math.floor(Math.random() * words.length)]}${num}() {
+//     return ${Math.floor(Math.random() * 9999)};
+// }
+// `;
+// }
+
+// fs.writeFileSync("random.js", randomCode());
+// console.log("New random code generated!");
+
+
+
+function isOddOrEven(num) {
+    if (num % 2 === 0) {
+        return "Even";
+    } else {
+        return "Odd";
+    }
 }
-`;
-}
 
-fs.writeFileSync("random.js", randomCode());
-console.log("New random code generated!");
+console.log(isOddOrEven(10)); // Even
+console.log(isOddOrEven(7));  // Odd
