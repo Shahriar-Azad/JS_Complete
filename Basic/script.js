@@ -382,13 +382,26 @@
 
 
 
-function isOddOrEven(num) {
-    if (num % 2 === 0) {
-        return "Even";
-    } else {
-        return "Odd";
-    }
+// function isOddOrEven(num) {
+//     if (num % 2 === 0) {
+//         return "Even";
+//     } else {
+//         return "Odd";
+//     }
+// }
+
+// console.log(isOddOrEven(10)); // Even
+// console.log(isOddOrEven(7));  // Odd
+
+
+function isPalindrome(num) {
+    const str = num.toString();
+    const reversed = str.split("").reverse().join("");
+    return str === reversed;
 }
 
-console.log(isOddOrEven(10)); // Even
-console.log(isOddOrEven(7));  // Odd
+// Examples
+console.log(isPalindrome(121));   // true
+console.log(isPalindrome(123));   // false
+console.log(isPalindrome(444));   // true
+console.log(isPalindrome(987));   // false
