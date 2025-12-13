@@ -435,16 +435,25 @@
 // console.log(generatePassword(10));
 
 
-function counter() {
-  let count = 0;
-  return function () {
-    count++;
-    return count;
-  };
+// function counter() {
+//   let count = 0;
+//   return function () {
+//     count++;
+//     return count;
+//   };
+// }
+
+// // Example
+// const myCounter = counter();
+// console.log(myCounter());
+// console.log(myCounter());
+
+
+function findMax(arr) {
+  return Math.max(...arr);
 }
 
 // Example
-const myCounter = counter();
-console.log(myCounter());
-console.log(myCounter());
+console.log(findMax([3, 9, 2, 7]));
+
 
