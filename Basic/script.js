@@ -420,16 +420,31 @@
 
 
 
-function generatePassword(length = 8) {
-  const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-  let password = "";
+// function generatePassword(length = 8) {
+//   const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+//   let password = "";
 
-  for (let i = 0; i < length; i++) {
-    password += chars[Math.floor(Math.random() * chars.length)];
-  }
+//   for (let i = 0; i < length; i++) {
+//     password += chars[Math.floor(Math.random() * chars.length)];
+//   }
 
-  return password;
+//   return password;
+// }
+
+// // Example
+// console.log(generatePassword(10));
+
+
+function counter() {
+  let count = 0;
+  return function () {
+    count++;
+    return count;
+  };
 }
 
 // Example
-console.log(generatePassword(10));
+const myCounter = counter();
+console.log(myCounter());
+console.log(myCounter());
+
