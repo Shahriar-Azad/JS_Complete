@@ -449,11 +449,24 @@
 // console.log(myCounter());
 
 
-function findMax(arr) {
-  return Math.max(...arr);
+// function findMax(arr) {
+//   return Math.max(...arr);
+// }
+
+// // Example
+// console.log(findMax([3, 9, 2, 7]));
+
+
+function randomQuote() {
+  const quotes = [
+    "Code. Eat. Sleep. Repeat.",
+    "JavaScript is fun!",
+    "Consistency beats talent.",
+    "Debugging is learning."
+  ];
+
+  return quotes[Math.floor(Math.random() * quotes.length)];
 }
 
 // Example
-console.log(findMax([3, 9, 2, 7]));
-
-
+console.log(randomQuote());
