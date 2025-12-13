@@ -406,15 +406,30 @@
 // console.log(isPalindrome(444));   // true
 // console.log(isPalindrome(987));   // false
 
-function isPalindromeWord(word) {
-    const cleaned = word.toLowerCase(); 
-    const reversed = cleaned.split("").reverse().join("");
-    return cleaned === reversed;
+// function isPalindromeWord(word) {
+//     const cleaned = word.toLowerCase(); 
+//     const reversed = cleaned.split("").reverse().join("");
+//     return cleaned === reversed;
+// }
+
+// // Examples
+// console.log(isPalindromeWord("level"));   // true
+// console.log(isPalindromeWord("madam"));   // true
+// console.log(isPalindromeWord("hello"));   // false
+// console.log(isPalindromeWord("Racecar")); // true (case-insensitive)
+
+
+
+function generatePassword(length = 8) {
+  const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  let password = "";
+
+  for (let i = 0; i < length; i++) {
+    password += chars[Math.floor(Math.random() * chars.length)];
+  }
+
+  return password;
 }
 
-// Examples
-console.log(isPalindromeWord("level"));   // true
-console.log(isPalindromeWord("madam"));   // true
-console.log(isPalindromeWord("hello"));   // false
-console.log(isPalindromeWord("Racecar")); // true (case-insensitive)
-
+// Example
+console.log(generatePassword(10));
