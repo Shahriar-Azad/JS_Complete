@@ -513,13 +513,20 @@
 
 // console.log(fibonacci(7));
 
-function isPrime(num) {
-  if (num <= 1) return false;
-  for (let i = 2; i <= Math.sqrt(num); i++) {
-    if (num % i === 0) return false;
-  }
-  return true;
+// function isPrime(num) {
+//   if (num <= 1) return false;
+//   for (let i = 2; i <= Math.sqrt(num); i++) {
+//     if (num % i === 0) return false;
+//   }
+//   return true;
+// }
+
+// console.log(isPrime(11));
+
+function removeDuplicates(arr) {
+  return [...new Set(arr)];
 }
 
-console.log(isPrime(11));
+console.log(removeDuplicates([1, 2, 2, 3, 4, 4]));
+
 
