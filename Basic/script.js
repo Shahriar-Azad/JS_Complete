@@ -472,8 +472,19 @@
 // console.log(randomQuote());
 
 
-function reverseString(str) {
-  return str.split("").reverse().join("");
+// function reverseString(str) {
+//   return str.split("").reverse().join("");
+// }
+
+// console.log(reverseString("javascript"));
+
+
+function countVowels(str) {
+  const vowels = "aeiou";
+  return str
+    .toLowerCase()
+    .split("")
+    .filter(ch => vowels.includes(ch)).length;
 }
 
-console.log(reverseString("javascript"));
+console.log(countVowels("Hello World"));
