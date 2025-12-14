@@ -503,12 +503,23 @@
 // console.log(factorial(5));
 
 
-function fibonacci(n) {
-  const series = [0, 1];
-  for (let i = 2; i < n; i++) {
-    series.push(series[i - 1] + series[i - 2]);
+// function fibonacci(n) {
+//   const series = [0, 1];
+//   for (let i = 2; i < n; i++) {
+//     series.push(series[i - 1] + series[i - 2]);
+//   }
+//   return series.slice(0, n);
+// }
+
+// console.log(fibonacci(7));
+
+function isPrime(num) {
+  if (num <= 1) return false;
+  for (let i = 2; i <= Math.sqrt(num); i++) {
+    if (num % i === 0) return false;
   }
-  return series.slice(0, n);
+  return true;
 }
 
-console.log(fibonacci(7));
+console.log(isPrime(11));
+
