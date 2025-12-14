@@ -491,13 +491,24 @@
 
 
 
-function factorial(n) {
-  if (n < 0) return null;
-  let result = 1;
-  for (let i = 1; i <= n; i++) {
-    result *= i;
+// function factorial(n) {
+//   if (n < 0) return null;
+//   let result = 1;
+//   for (let i = 1; i <= n; i++) {
+//     result *= i;
+//   }
+//   return result;
+// }
+
+// console.log(factorial(5));
+
+
+function fibonacci(n) {
+  const series = [0, 1];
+  for (let i = 2; i < n; i++) {
+    series.push(series[i - 1] + series[i - 2]);
   }
-  return result;
+  return series.slice(0, n);
 }
 
-console.log(factorial(5));
+console.log(fibonacci(7));
