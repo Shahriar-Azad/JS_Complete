@@ -457,16 +457,23 @@
 // console.log(findMax([3, 9, 2, 7]));
 
 
-function randomQuote() {
-  const quotes = [
-    "Code. Eat. Sleep. Repeat.",
-    "JavaScript is fun!",
-    "Consistency beats talent.",
-    "Debugging is learning."
-  ];
+// function randomQuote() {
+//   const quotes = [
+//     "Code. Eat. Sleep. Repeat.",
+//     "JavaScript is fun!",
+//     "Consistency beats talent.",
+//     "Debugging is learning."
+//   ];
 
-  return quotes[Math.floor(Math.random() * quotes.length)];
+//   return quotes[Math.floor(Math.random() * quotes.length)];
+// }
+
+// // Example
+// console.log(randomQuote());
+
+
+function reverseString(str) {
+  return str.split("").reverse().join("");
 }
 
-// Example
-console.log(randomQuote());
+console.log(reverseString("javascript"));
