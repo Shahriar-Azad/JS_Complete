@@ -479,12 +479,25 @@
 // console.log(reverseString("javascript"));
 
 
-function countVowels(str) {
-  const vowels = "aeiou";
-  return str
-    .toLowerCase()
-    .split("")
-    .filter(ch => vowels.includes(ch)).length;
+// function countVowels(str) {
+//   const vowels = "aeiou";
+//   return str
+//     .toLowerCase()
+//     .split("")
+//     .filter(ch => vowels.includes(ch)).length;
+// }
+
+// console.log(countVowels("Hello World"));
+
+
+
+function factorial(n) {
+  if (n < 0) return null;
+  let result = 1;
+  for (let i = 1; i <= n; i++) {
+    result *= i;
+  }
+  return result;
 }
 
-console.log(countVowels("Hello World"));
+console.log(factorial(5));
