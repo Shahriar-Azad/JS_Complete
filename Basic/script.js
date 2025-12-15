@@ -530,8 +530,15 @@
 // console.log(removeDuplicates([1, 2, 2, 3, 4, 4]));
 
 
-function arraySum(arr) {
-  return arr.reduce((sum, num) => sum + num, 0);
+// function arraySum(arr) {
+//   return arr.reduce((sum, num) => sum + num, 0);
+// }
+
+// console.log(arraySum([1, 2, 3, 4]));
+
+
+function randomBetween(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-console.log(arraySum([1, 2, 3, 4]));
+console.log(randomBetween(10, 20));
