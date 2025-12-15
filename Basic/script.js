@@ -537,8 +537,18 @@
 // console.log(arraySum([1, 2, 3, 4]));
 
 
-function randomBetween(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+// function randomBetween(min, max) {
+//   return Math.floor(Math.random() * (max - min + 1)) + min;
+// }
+
+// console.log(randomBetween(10, 20));
+
+
+function capitalizeWords(sentence) {
+  return sentence
+    .split(" ")
+    .map(word => word[0].toUpperCase() + word.slice(1))
+    .join(" ");
 }
 
-console.log(randomBetween(10, 20));
+console.log(capitalizeWords("hello world from github"));
