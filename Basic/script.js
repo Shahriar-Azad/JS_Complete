@@ -523,10 +523,15 @@
 
 // console.log(isPrime(11));
 
-function removeDuplicates(arr) {
-  return [...new Set(arr)];
+// function removeDuplicates(arr) {
+//   return [...new Set(arr)];
+// }
+
+// console.log(removeDuplicates([1, 2, 2, 3, 4, 4]));
+
+
+function arraySum(arr) {
+  return arr.reduce((sum, num) => sum + num, 0);
 }
 
-console.log(removeDuplicates([1, 2, 2, 3, 4, 4]));
-
-
+console.log(arraySum([1, 2, 3, 4]));
