@@ -544,11 +544,35 @@
 // console.log(randomBetween(10, 20));
 
 
-function capitalizeWords(sentence) {
-  return sentence
-    .split(" ")
-    .map(word => word[0].toUpperCase() + word.slice(1))
-    .join(" ");
+// function capitalizeWords(sentence) {
+//   return sentence
+//     .split(" ")
+//     .map(word => word[0].toUpperCase() + word.slice(1))
+//     .join(" ");
+// }
+
+// console.log(capitalizeWords("hello world from github"));
+
+class TodoList {
+  constructor() {
+    this.todos = [];
+  }
+
+  add(todo) {
+    this.todos.push(todo);
+  }
+
+  remove(index) {
+    this.todos.splice(index, 1);
+  }
+
+  getAll() {
+    return this.todos;
+  }
 }
 
-console.log(capitalizeWords("hello world from github"));
+const myTodos = new TodoList();
+myTodos.add("Learn JavaScript");
+myTodos.add("Push code to GitHub");
+console.log(myTodos.getAll());
+
