@@ -598,16 +598,27 @@
 // console.log(longestWord("JavaScript is super powerful"));
 
 
-function wordFrequency(text) {
-  const words = text.toLowerCase().split(" ");
-  const freq = {};
+// function wordFrequency(text) {
+//   const words = text.toLowerCase().split(" ");
+//   const freq = {};
 
-  for (const word of words) {
-    freq[word] = (freq[word] || 0) + 1;
+//   for (const word of words) {
+//     freq[word] = (freq[word] || 0) + 1;
+//   }
+
+//   return freq;
+// }
+
+// console.log(wordFrequency("js is fun and js is powerful"));
+
+function shuffleArray(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
   }
-
-  return freq;
+  return arr;
 }
 
-console.log(wordFrequency("js is fun and js is powerful"));
+console.log(shuffleArray([1, 2, 3, 4, 5]));
+
 
