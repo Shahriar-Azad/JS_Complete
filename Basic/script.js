@@ -587,13 +587,27 @@
 
 
 
-function longestWord(sentence) {
-  return sentence
-    .split(" ")
-    .reduce((longest, word) =>
-      word.length > longest.length ? word : longest
-    , "");
+// function longestWord(sentence) {
+//   return sentence
+//     .split(" ")
+//     .reduce((longest, word) =>
+//       word.length > longest.length ? word : longest
+//     , "");
+// }
+
+// console.log(longestWord("JavaScript is super powerful"));
+
+
+function wordFrequency(text) {
+  const words = text.toLowerCase().split(" ");
+  const freq = {};
+
+  for (const word of words) {
+    freq[word] = (freq[word] || 0) + 1;
+  }
+
+  return freq;
 }
 
-console.log(longestWord("JavaScript is super powerful"));
+console.log(wordFrequency("js is fun and js is powerful"));
 
