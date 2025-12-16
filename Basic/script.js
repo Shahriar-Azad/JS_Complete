@@ -553,26 +553,34 @@
 
 // console.log(capitalizeWords("hello world from github"));
 
-class TodoList {
-  constructor() {
-    this.todos = [];
-  }
+// class TodoList {
+//   constructor() {
+//     this.todos = [];
+//   }
 
-  add(todo) {
-    this.todos.push(todo);
-  }
+//   add(todo) {
+//     this.todos.push(todo);
+//   }
 
-  remove(index) {
-    this.todos.splice(index, 1);
-  }
+//   remove(index) {
+//     this.todos.splice(index, 1);
+//   }
 
-  getAll() {
-    return this.todos;
-  }
+//   getAll() {
+//     return this.todos;
+//   }
+// }
+
+// const myTodos = new TodoList();
+// myTodos.add("Learn JavaScript");
+// myTodos.add("Push code to GitHub");
+// console.log(myTodos.getAll());
+
+function isAnagram(str1, str2) {
+  const format = str =>
+    str.toLowerCase().replace(/[^a-z]/g, "").split("").sort().join("");
+
+  return format(str1) === format(str2);
 }
 
-const myTodos = new TodoList();
-myTodos.add("Learn JavaScript");
-myTodos.add("Push code to GitHub");
-console.log(myTodos.getAll());
-
+console.log(isAnagram("listen", "silent"));
