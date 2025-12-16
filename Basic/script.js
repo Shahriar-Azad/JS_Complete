@@ -611,14 +611,21 @@
 
 // console.log(wordFrequency("js is fun and js is powerful"));
 
-function shuffleArray(arr) {
-  for (let i = arr.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [arr[i], arr[j]] = [arr[j], arr[i]];
-  }
-  return arr;
+// function shuffleArray(arr) {
+//   for (let i = arr.length - 1; i > 0; i--) {
+//     const j = Math.floor(Math.random() * (i + 1));
+//     [arr[i], arr[j]] = [arr[j], arr[i]];
+//   }
+//   return arr;
+// }
+
+// console.log(shuffleArray([1, 2, 3, 4, 5]));
+
+
+function isLeapYear(year) {
+  return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
 }
 
-console.log(shuffleArray([1, 2, 3, 4, 5]));
+console.log(isLeapYear(2024));
 
 
