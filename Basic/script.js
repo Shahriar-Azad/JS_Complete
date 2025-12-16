@@ -576,11 +576,24 @@
 // myTodos.add("Push code to GitHub");
 // console.log(myTodos.getAll());
 
-function isAnagram(str1, str2) {
-  const format = str =>
-    str.toLowerCase().replace(/[^a-z]/g, "").split("").sort().join("");
+// function isAnagram(str1, str2) {
+//   const format = str =>
+//     str.toLowerCase().replace(/[^a-z]/g, "").split("").sort().join("");
 
-  return format(str1) === format(str2);
+//   return format(str1) === format(str2);
+// }
+
+// console.log(isAnagram("listen", "silent"));
+
+
+
+function longestWord(sentence) {
+  return sentence
+    .split(" ")
+    .reduce((longest, word) =>
+      word.length > longest.length ? word : longest
+    , "");
 }
 
-console.log(isAnagram("listen", "silent"));
+console.log(longestWord("JavaScript is super powerful"));
+
