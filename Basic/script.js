@@ -629,8 +629,21 @@
 // console.log(isLeapYear(2024));
 
 
-function celsiusToFahrenheit(celsius) {
-  return (celsius * 9/5) + 32;
+// function celsiusToFahrenheit(celsius) {
+//   return (celsius * 9/5) + 32;
+// }
+
+// console.log(celsiusToFahrenheit(30));
+
+
+function debounce(fn, delay) {
+  let timer;
+  return function (...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() => fn.apply(this, args), delay);
+  };
 }
 
-console.log(celsiusToFahrenheit(30));
+// Example
+const log = debounce(() => console.log("Debounced!"), 500);
+log();
