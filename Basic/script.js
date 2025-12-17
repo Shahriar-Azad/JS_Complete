@@ -636,14 +636,27 @@
 // console.log(celsiusToFahrenheit(30));
 
 
-function debounce(fn, delay) {
-  let timer;
+// function debounce(fn, delay) {
+//   let timer;
+//   return function (...args) {
+//     clearTimeout(timer);
+//     timer = setTimeout(() => fn.apply(this, args), delay);
+//   };
+// }
+
+// // Example
+// const log = debounce(() => console.log("Debounced!"), 500);
+// log();
+
+
+function throttle(fn, limit) {
+  let inThrottle = false;
   return function (...args) {
-    clearTimeout(timer);
-    timer = setTimeout(() => fn.apply(this, args), delay);
+    if (!inThrottle) {
+      fn.apply(this, args);
+      inThrottle = true;
+      setTimeout(() => (inThrottle = false), limit);
+    }
   };
 }
 
-// Example
-const log = debounce(() => console.log("Debounced!"), 500);
-log();
