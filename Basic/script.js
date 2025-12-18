@@ -662,12 +662,19 @@
 
 
 
-function deepClone(obj) {
-  return JSON.parse(JSON.stringify(obj));
+// function deepClone(obj) {
+//   return JSON.parse(JSON.stringify(obj));
+// }
+
+// const original = { a: 1, b: { c: 2 } };
+// const copy = deepClone(original);
+
+// console.log(copy);
+
+
+function isEmptyObject(obj) {
+  return Object.keys(obj).length === 0;
 }
 
-const original = { a: 1, b: { c: 2 } };
-const copy = deepClone(original);
-
-console.log(copy);
+console.log(isEmptyObject({}));
 
