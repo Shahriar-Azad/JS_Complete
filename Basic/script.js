@@ -691,8 +691,18 @@
 
 // date formatter:
 
-function formatDate(date = new Date()) {
-  return date.toISOString().split("T")[0];
+// function formatDate(date = new Date()) {
+//   return date.toISOString().split("T")[0];
+// }
+
+// console.log(formatDate());
+
+
+// array shuffle:
+
+function shuffleArray(arr) {
+  return arr.sort(() => Math.random() - 0.5);
 }
 
-console.log(formatDate());
+console.log(shuffleArray([1, 2, 3, 4, 5]));
+
