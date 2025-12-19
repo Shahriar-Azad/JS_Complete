@@ -682,8 +682,17 @@
 
 // random number
 
-function randomNumber(min = 1, max = 100) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+// function randomNumber(min = 1, max = 100) {
+//   return Math.floor(Math.random() * (max - min + 1)) + min;
+// }
+
+// console.log(randomNumber());
+
+
+// date formatter:
+
+function formatDate(date = new Date()) {
+  return date.toISOString().split("T")[0];
 }
 
-console.log(randomNumber());
+console.log(formatDate());
