@@ -672,9 +672,18 @@
 // console.log(copy);
 
 
-function isEmptyObject(obj) {
-  return Object.keys(obj).length === 0;
+// function isEmptyObject(obj) {
+//   return Object.keys(obj).length === 0;
+// }
+
+// console.log(isEmptyObject({}));
+
+
+
+// random number
+
+function randomNumber(min = 1, max = 100) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-console.log(isEmptyObject({}));
-
+console.log(randomNumber());
