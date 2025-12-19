@@ -700,9 +700,21 @@
 
 // array shuffle:
 
-function shuffleArray(arr) {
-  return arr.sort(() => Math.random() - 0.5);
+// function shuffleArray(arr) {
+//   return arr.sort(() => Math.random() - 0.5);
+// }
+
+// console.log(shuffleArray([1, 2, 3, 4, 5]));
+
+
+// simple counter:
+
+let count = 0;
+
+function increment() {
+  count++;
+  return count;
 }
 
-console.log(shuffleArray([1, 2, 3, 4, 5]));
+console.log(increment());
 
