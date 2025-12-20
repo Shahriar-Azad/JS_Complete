@@ -709,12 +709,20 @@
 
 // simple counter:
 
-let count = 0;
+// let count = 0;
 
-function increment() {
-  count++;
+// function increment() {
+//   count++;
+//   return count;
+// }
+
+// console.log(increment());
+
+let count = 10;
+
+function decreament(){
+  count--;
   return count;
+
 }
-
-console.log(increment());
-
+console.log(decreament());
