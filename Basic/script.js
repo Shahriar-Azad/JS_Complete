@@ -718,11 +718,22 @@
 
 // console.log(increment());
 
-let count = 10;
+// let count = 10;
 
-function decreament(){
-  count--;
-  return count;
+// function decreament(){
+//   count--;
+//   return count;
 
-}
-console.log(decreament());
+// }
+// console.log(decreament());
+
+
+const fetchData = async (url) => {
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Fetch error:", error);
+  }
+};
