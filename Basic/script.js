@@ -738,4 +738,7 @@
 //   }
 // };
 
-const deepClone = (obj) => JSON.parse(JSON.stringify(obj));
+// const deepClone = (obj) => JSON.parse(JSON.stringify(obj));
+
+
+const uniqueArray = (arr) => [...new Set(arr)];
