@@ -728,12 +728,14 @@
 // console.log(decreament());
 
 
-const fetchData = async (url) => {
-  try {
-    const response = await fetch(url);
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error("Fetch error:", error);
-  }
-};
+// const fetchData = async (url) => {
+//   try {
+//     const response = await fetch(url);
+//     const data = await response.json();
+//     return data;
+//   } catch (error) {
+//     console.error("Fetch error:", error);
+//   }
+// };
+
+const deepClone = (obj) => JSON.parse(JSON.stringify(obj));
