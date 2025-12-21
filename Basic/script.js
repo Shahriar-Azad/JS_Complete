@@ -759,18 +759,26 @@
 // console.log(flattenArray([1, [2, [3, [4]]]]));
 
 
-function groupBy(arr, key) {
-  return arr.reduce((acc, item) => {
-    const group = item[key];
-    acc[group] = acc[group] || [];
-    acc[group].push(item);
-    return acc;
-  }, {});
+// function groupBy(arr, key) {
+//   return arr.reduce((acc, item) => {
+//     const group = item[key];
+//     acc[group] = acc[group] || [];
+//     acc[group].push(item);
+//     return acc;
+//   }, {});
+// }
+
+// console.log(
+//   groupBy(
+//     [{ type: "fruit", name: "apple" }, { type: "veg", name: "carrot" }],
+//     "type"
+//   )
+// );
+
+
+
+function removeFalsy(arr) {
+  return arr.filter(Boolean);
 }
 
-console.log(
-  groupBy(
-    [{ type: "fruit", name: "apple" }, { type: "veg", name: "carrot" }],
-    "type"
-  )
-);
+console.log(removeFalsy([0, 1, false, 2, "", 3]));
