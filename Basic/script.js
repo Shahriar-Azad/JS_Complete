@@ -745,8 +745,15 @@
 
 
 
-function formatNumber(num) {
-  return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+// function formatNumber(num) {
+//   return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+// }
+
+// console.log(formatNumber(12345678));
+
+
+function flattenArray(arr) {
+  return arr.flat(Infinity);
 }
 
-console.log(formatNumber(12345678));
+console.log(flattenArray([1, [2, [3, [4]]]]));
