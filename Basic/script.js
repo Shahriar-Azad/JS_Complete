@@ -741,4 +741,12 @@
 // const deepClone = (obj) => JSON.parse(JSON.stringify(obj));
 
 
-const uniqueArray = (arr) => [...new Set(arr)];
+// const uniqueArray = (arr) => [...new Set(arr)];
+
+
+
+function formatNumber(num) {
+  return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+console.log(formatNumber(12345678));
