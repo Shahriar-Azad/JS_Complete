@@ -752,8 +752,25 @@
 // console.log(formatNumber(12345678));
 
 
-function flattenArray(arr) {
-  return arr.flat(Infinity);
+// function flattenArray(arr) {
+//   return arr.flat(Infinity);
+// }
+
+// console.log(flattenArray([1, [2, [3, [4]]]]));
+
+
+function groupBy(arr, key) {
+  return arr.reduce((acc, item) => {
+    const group = item[key];
+    acc[group] = acc[group] || [];
+    acc[group].push(item);
+    return acc;
+  }, {});
 }
 
-console.log(flattenArray([1, [2, [3, [4]]]]));
+console.log(
+  groupBy(
+    [{ type: "fruit", name: "apple" }, { type: "veg", name: "carrot" }],
+    "type"
+  )
+);
