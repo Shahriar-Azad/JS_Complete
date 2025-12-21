@@ -777,8 +777,15 @@
 
 
 
-function removeFalsy(arr) {
-  return arr.filter(Boolean);
+// function removeFalsy(arr) {
+//   return arr.filter(Boolean);
+// }
+
+// console.log(removeFalsy([0, 1, false, 2, "", 3]));
+
+
+function randomHexColor() {
+  return "#" + Math.floor(Math.random() * 16777215).toString(16);
 }
 
-console.log(removeFalsy([0, 1, false, 2, "", 3]));
+console.log(randomHexColor());
