@@ -814,21 +814,38 @@
 // console.log(rotateArray([1, 2, 3, 4, 5], 2)); // [4, 5, 1, 2, 3]
 
 // Find two numbers that add up to target
-function twoSum(nums, target) {
-    const numMap = new Map();
+// function twoSum(nums, target) {
+//     const numMap = new Map();
     
-    for (let i = 0; i < nums.length; i++) {
-        const complement = target - nums[i];
+//     for (let i = 0; i < nums.length; i++) {
+//         const complement = target - nums[i];
         
-        if (numMap.has(complement)) {
-            return [numMap.get(complement), i];
-        }
+//         if (numMap.has(complement)) {
+//             return [numMap.get(complement), i];
+//         }
         
-        numMap.set(nums[i], i);
+//         numMap.set(nums[i], i);
+//     }
+    
+//     return [];
+// }
+
+// // Example
+// console.log(twoSum([2, 7, 11, 15], 9)); // [0, 1]
+
+
+// Find maximum sum of contiguous subarray
+function maxSubArray(nums) {
+    let maxSum = nums[0];
+    let currentSum = nums[0];
+    
+    for (let i = 1; i < nums.length; i++) {
+        currentSum = Math.max(nums[i], currentSum + nums[i]);
+        maxSum = Math.max(maxSum, currentSum);
     }
     
-    return [];
+    return maxSum;
 }
 
 // Example
-console.log(twoSum([2, 7, 11, 15], 9)); // [0, 1]
+console.log(maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4])); // 6
