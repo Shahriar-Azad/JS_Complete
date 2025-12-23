@@ -835,17 +835,49 @@
 
 
 // Find maximum sum of contiguous subarray
-function maxSubArray(nums) {
-    let maxSum = nums[0];
-    let currentSum = nums[0];
+// function maxSubArray(nums) {
+//     let maxSum = nums[0];
+//     let currentSum = nums[0];
     
-    for (let i = 1; i < nums.length; i++) {
-        currentSum = Math.max(nums[i], currentSum + nums[i]);
-        maxSum = Math.max(maxSum, currentSum);
+//     for (let i = 1; i < nums.length; i++) {
+//         currentSum = Math.max(nums[i], currentSum + nums[i]);
+//         maxSum = Math.max(maxSum, currentSum);
+//     }
+    
+//     return maxSum;
+// }
+
+// // Example
+// console.log(maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4])); // 6
+
+// Merge two sorted arrays into one sorted array
+function mergeSortedArrays(arr1, arr2) {
+    const merged = [];
+    let i = 0, j = 0;
+    
+    while (i < arr1.length && j < arr2.length) {
+        if (arr1[i] < arr2[j]) {
+            merged.push(arr1[i]);
+            i++;
+        } else {
+            merged.push(arr2[j]);
+            j++;
+        }
     }
     
-    return maxSum;
+    // Add remaining elements
+    while (i < arr1.length) {
+        merged.push(arr1[i]);
+        i++;
+    }
+    
+    while (j < arr2.length) {
+        merged.push(arr2[j]);
+        j++;
+    }
+    
+    return merged;
 }
 
 // Example
-console.log(maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4])); // 6
+console.log(mergeSortedArrays([1, 3, 5], [2, 4, 6])); // [1, 2, 3, 4, 5, 6]
