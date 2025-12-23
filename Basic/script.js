@@ -784,8 +784,31 @@
 // console.log(removeFalsy([0, 1, false, 2, "", 3]));
 
 
-function randomHexColor() {
-  return "#" + Math.floor(Math.random() * 16777215).toString(16);
+// function randomHexColor() {
+//   return "#" + Math.floor(Math.random() * 16777215).toString(16);
+// }
+
+// console.log(randomHexColor());
+
+
+// Rotate array by k positions using reversal method
+function rotateArray(arr, k) {
+    k = k % arr.length;
+    
+    function reverse(start, end) {
+        while (start < end) {
+            [arr[start], arr[end]] = [arr[end], arr[start]];
+            start++;
+            end--;
+        }
+    }
+    
+    reverse(0, arr.length - 1);
+    reverse(0, k - 1);
+    reverse(k, arr.length - 1);
+    
+    return arr;
 }
 
-console.log(randomHexColor());
+// Example
+console.log(rotateArray([1, 2, 3, 4, 5], 2)); // [4, 5, 1, 2, 3]
