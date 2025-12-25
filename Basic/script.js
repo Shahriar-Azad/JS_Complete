@@ -904,8 +904,20 @@
 // }
 
 
-function isValidEmail(email) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+// function isValidEmail(email) {
+//   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+// }
+
+// console.log(isValidEmail("test@example.com"));
+
+
+function checkNumber(num) {
+  if (num > 0) return "Positive";
+  if (num < 0) return "Negative";
+  return "Zero";
 }
 
-console.log(isValidEmail("test@example.com"));
+// Example
+console.log(checkNumber(5));
+console.log(checkNumber(-3));
+console.log(checkNumber(0));
