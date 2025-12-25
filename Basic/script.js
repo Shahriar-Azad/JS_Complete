@@ -882,12 +882,23 @@
 // // Example
 // console.log(mergeSortedArrays([1, 3, 5], [2, 4, 6])); // [1, 2, 3, 4, 5, 6]
 
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
+// function sleep(ms) {
+//   return new Promise(resolve => setTimeout(resolve, ms));
+// }
 
-(async () => {
-  console.log("Wait...");
-  await sleep(1000);
-  console.log("Done!");
-})();
+// (async () => {
+//   console.log("Wait...");
+//   await sleep(1000);
+//   console.log("Done!");
+// })();
+
+
+
+async function retry(fn, retries = 3) {
+  try {
+    return await fn();
+  } catch (err) {
+    if (retries === 0) throw err;
+    return retry(fn, retries - 1);
+  }
+}
