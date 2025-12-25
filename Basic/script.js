@@ -894,11 +894,18 @@
 
 
 
-async function retry(fn, retries = 3) {
-  try {
-    return await fn();
-  } catch (err) {
-    if (retries === 0) throw err;
-    return retry(fn, retries - 1);
-  }
+// async function retry(fn, retries = 3) {
+//   try {
+//     return await fn();
+//   } catch (err) {
+//     if (retries === 0) throw err;
+//     return retry(fn, retries - 1);
+//   }
+// }
+
+
+function isValidEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
+
+console.log(isValidEmail("test@example.com"));
