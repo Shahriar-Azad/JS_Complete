@@ -923,12 +923,19 @@
 // console.log(checkNumber(0));
 
 
-function average(arr) {
-  let total = 0;
-  for (let num of arr) {
-    total += num;
-  }
-  return total / arr.length;
+// function average(arr) {
+//   let total = 0;
+//   for (let num of arr) {
+//     total += num;
+//   }
+//   return total / arr.length;
+// }
+
+// console.log(average([2, 4, 6, 8]));
+
+function minutesToSeconds(minutes) {
+  return minutes * 60;
 }
 
-console.log(average([2, 4, 6, 8]));
+console.log(minutesToSeconds(5));
+
