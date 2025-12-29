@@ -933,9 +933,16 @@
 
 // console.log(average([2, 4, 6, 8]));
 
-function minutesToSeconds(minutes) {
-  return minutes * 60;
+// function minutesToSeconds(minutes) {
+//   return minutes * 60;
+// }
+
+// console.log(minutesToSeconds(5));
+
+
+
+function canVote(age) {
+  return age >= 18;
 }
 
-console.log(minutesToSeconds(5));
-
+console.log(canVote(20));
