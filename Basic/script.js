@@ -911,13 +911,24 @@
 // console.log(isValidEmail("test@example.com"));
 
 
-function checkNumber(num) {
-  if (num > 0) return "Positive";
-  if (num < 0) return "Negative";
-  return "Zero";
+// function checkNumber(num) {
+//   if (num > 0) return "Positive";
+//   if (num < 0) return "Negative";
+//   return "Zero";
+// }
+
+// // Example
+// console.log(checkNumber(5));
+// console.log(checkNumber(-3));
+// console.log(checkNumber(0));
+
+
+function average(arr) {
+  let total = 0;
+  for (let num of arr) {
+    total += num;
+  }
+  return total / arr.length;
 }
 
-// Example
-console.log(checkNumber(5));
-console.log(checkNumber(-3));
-console.log(checkNumber(0));
+console.log(average([2, 4, 6, 8]));
