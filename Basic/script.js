@@ -941,8 +941,15 @@
 
 
 
-function canVote(age) {
-  return age >= 18;
+// function canVote(age) {
+//   return age >= 18;
+// }
+
+// console.log(canVote(20));
+
+function maxOfTwo(a, b) {
+  return a > b ? a : b;
 }
 
-console.log(canVote(20));
+console.log(maxOfTwo(10, 7));
+
