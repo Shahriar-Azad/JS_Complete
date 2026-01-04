@@ -953,8 +953,15 @@
 
 // console.log(maxOfTwo(10, 7));
 
-function formatNumber(num) {
-  return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+// function formatNumber(num) {
+//   return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+// }
+
+// console.log(formatNumber(123456789));
+
+
+function delay(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-console.log(formatNumber(123456789));
+delay(1000).then(() => console.log("Done waiting"));
