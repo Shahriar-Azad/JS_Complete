@@ -947,9 +947,14 @@
 
 // console.log(canVote(20));
 
-function maxOfTwo(a, b) {
-  return a > b ? a : b;
+// function maxOfTwo(a, b) {
+//   return a > b ? a : b;
+// }
+
+// console.log(maxOfTwo(10, 7));
+
+function formatNumber(num) {
+  return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-console.log(maxOfTwo(10, 7));
-
+console.log(formatNumber(123456789));
