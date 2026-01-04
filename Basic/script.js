@@ -960,8 +960,15 @@
 // console.log(formatNumber(123456789));
 
 
-function delay(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+// function delay(ms) {
+//   return new Promise(resolve => setTimeout(resolve, ms));
+// }
+
+// delay(1000).then(() => console.log("Done waiting"));
+
+
+function isValidUsername(username) {
+  return /^[a-zA-Z0-9_]{3,15}$/.test(username);
 }
 
-delay(1000).then(() => console.log("Done waiting"));
+console.log(isValidUsername("shahriar_dev"));
