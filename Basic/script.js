@@ -974,11 +974,23 @@
 // console.log(isValidUsername("shahriar_dev"));
 
 
-let isActive = false;
+// let isActive = false;
 
-function toggle() {
-  isActive = !isActive;
-  return isActive;
+// function toggle() {
+//   isActive = !isActive;
+//   return isActive;
+// }
+
+// console.log(toggle());
+
+
+function calculate(a, b) {
+  return {
+    sum: a + b,
+    diff: a - b,
+    product: a * b,
+  };
 }
 
-console.log(toggle());
+console.log(calculate(5, 3));
+
