@@ -984,13 +984,26 @@
 // console.log(toggle());
 
 
-function calculate(a, b) {
-  return {
-    sum: a + b,
-    diff: a - b,
-    product: a * b,
-  };
+// function calculate(a, b) {
+//   return {
+//     sum: a + b,
+//     diff: a - b,
+//     product: a * b,
+//   };
+// }
+
+// console.log(calculate(5, 3));
+
+
+
+function fakeApi() {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve("Success");
+    }, 1000);
+  });
 }
 
-console.log(calculate(5, 3));
+fakeApi().then(console.log);
+
 
