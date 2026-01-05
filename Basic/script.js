@@ -967,8 +967,18 @@
 // delay(1000).then(() => console.log("Done waiting"));
 
 
-function isValidUsername(username) {
-  return /^[a-zA-Z0-9_]{3,15}$/.test(username);
+// function isValidUsername(username) {
+//   return /^[a-zA-Z0-9_]{3,15}$/.test(username);
+// }
+
+// console.log(isValidUsername("shahriar_dev"));
+
+
+let isActive = false;
+
+function toggle() {
+  isActive = !isActive;
+  return isActive;
 }
 
-console.log(isValidUsername("shahriar_dev"));
+console.log(toggle());
