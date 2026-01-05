@@ -996,14 +996,30 @@
 
 
 
-function fakeApi() {
-  return new Promise(resolve => {
-    setTimeout(() => {
-      resolve("Success");
-    }, 1000);
-  });
+// function fakeApi() {
+//   return new Promise(resolve => {
+//     setTimeout(() => {
+//       resolve("Success");
+//     }, 1000);
+//   });
+// }
+
+// fakeApi().then(console.log);
+
+
+async function getCommits(owner, repo) {
+  const res = await fetch(
+    `https://api.github.com/repos/${owner}/${repo}/commits`
+  );
+  const data = await res.json();
+
+  return data.map(c => ({
+    sha: c.sha,
+    message: c.commit.message,
+    author: c.commit.author.name,
+  }));
 }
 
-fakeApi().then(console.log);
+getCommits("vercel", "next.js").then(console.log);
 
 
