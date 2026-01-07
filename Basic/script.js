@@ -1037,8 +1037,16 @@
 // console.log(capitalize("github"));
 
 
-function generateId() {
-  return Math.random().toString(36).substring(2, 10);
+// function generateId() {
+//   return Math.random().toString(36).substring(2, 10);
+// }
+
+// console.log(generateId());
+
+
+function clamp(value, min, max) {
+  return Math.min(Math.max(value, min), max);
 }
 
-console.log(generateId());
+console.log(clamp(15, 0, 10));
+
