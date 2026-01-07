@@ -1007,19 +1007,24 @@
 // fakeApi().then(console.log);
 
 
-async function getCommits(owner, repo) {
-  const res = await fetch(
-    `https://api.github.com/repos/${owner}/${repo}/commits`
-  );
-  const data = await res.json();
+// async function getCommits(owner, repo) {
+//   const res = await fetch(
+//     `https://api.github.com/repos/${owner}/${repo}/commits`
+//   );
+//   const data = await res.json();
 
-  return data.map(c => ({
-    sha: c.sha,
-    message: c.commit.message,
-    author: c.commit.author.name,
-  }));
+//   return data.map(c => ({
+//     sha: c.sha,
+//     message: c.commit.message,
+//     author: c.commit.author.name,
+//   }));
+// }
+
+// getCommits("vercel", "next.js").then(console.log);
+
+
+function reverseString(str) {
+  return str.split("").reverse().join("");
 }
 
-getCommits("vercel", "next.js").then(console.log);
-
-
+console.log(reverseString("commit"));
