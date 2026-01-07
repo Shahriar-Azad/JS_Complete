@@ -1023,8 +1023,15 @@
 // getCommits("vercel", "next.js").then(console.log);
 
 
-function reverseString(str) {
-  return str.split("").reverse().join("");
+// function reverseString(str) {
+//   return str.split("").reverse().join("");
+// }
+
+// console.log(reverseString("commit"));
+
+
+function capitalize(word) {
+  return word.charAt(0).toUpperCase() + word.slice(1);
 }
 
-console.log(reverseString("commit"));
+console.log(capitalize("github"));
