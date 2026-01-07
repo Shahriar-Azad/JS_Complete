@@ -1030,8 +1030,15 @@
 // console.log(reverseString("commit"));
 
 
-function capitalize(word) {
-  return word.charAt(0).toUpperCase() + word.slice(1);
+// function capitalize(word) {
+//   return word.charAt(0).toUpperCase() + word.slice(1);
+// }
+
+// console.log(capitalize("github"));
+
+
+function generateId() {
+  return Math.random().toString(36).substring(2, 10);
 }
 
-console.log(capitalize("github"));
+console.log(generateId());
