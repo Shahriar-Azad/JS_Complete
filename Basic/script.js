@@ -1044,9 +1044,20 @@
 // console.log(generateId());
 
 
-function clamp(value, min, max) {
-  return Math.min(Math.max(value, min), max);
-}
+// function clamp(value, min, max) {
+//   return Math.min(Math.max(value, min), max);
+// }
 
-console.log(clamp(15, 0, 10));
+// console.log(clamp(15, 0, 10));
+
+const quotes = [
+  "Code. Commit. Repeat.",
+  "Small commits compound.",
+  "No zero days.",
+  "One commit closer to mastery."
+];
+
+console.log(
+  quotes[Math.floor(Math.random() * quotes.length)]
+);
 
