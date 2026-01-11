@@ -1061,8 +1061,13 @@
 //   quotes[Math.floor(Math.random() * quotes.length)]
 // );
 
-let streakCount = 1;
+// let streakCount = 1;
 
-streakCount += 1;
+// streakCount += 1;
 
-console.log(`GitHub streak day: ${streakCount}`);
+// console.log(`GitHub streak day: ${streakCount}`);
+
+
+const randomNumber = Math.floor(Math.random() * 10000);
+
+console.log("Random value:", randomNumber);
