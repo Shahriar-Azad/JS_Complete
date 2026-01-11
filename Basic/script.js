@@ -1050,14 +1050,19 @@
 
 // console.log(clamp(15, 0, 10));
 
-const quotes = [
-  "Code. Commit. Repeat.",
-  "Small commits compound.",
-  "No zero days.",
-  "One commit closer to mastery."
-];
+// const quotes = [
+//   "Code. Commit. Repeat.",
+//   "Small commits compound.",
+//   "No zero days.",
+//   "One commit closer to mastery."
+// ];
 
-console.log(
-  quotes[Math.floor(Math.random() * quotes.length)]
-);
+// console.log(
+//   quotes[Math.floor(Math.random() * quotes.length)]
+// );
 
+let streakCount = 1;
+
+streakCount += 1;
+
+console.log(`GitHub streak day: ${streakCount}`);
