@@ -1074,11 +1074,23 @@
 
 
 
-const crypto = require("crypto");
+// const crypto = require("crypto");
 
-const hash = crypto
-  .createHash("sha256")
-  .update(new Date().toDateString())
-  .digest("hex");
+// const hash = crypto
+//   .createHash("sha256")
+//   .update(new Date().toDateString())
+//   .digest("hex");
 
-console.log("Daily hash:", hash);
+// console.log("Daily hash:", hash);
+
+
+
+const todos = [
+  "Learn something new",
+  "Write cleaner code",
+  "Refactor old logic",
+  "Read docs"
+];
+
+console.log("Today's task:", todos[Math.floor(Math.random() * todos.length)]);
+
