@@ -1085,12 +1085,20 @@
 
 
 
-const todos = [
-  "Learn something new",
-  "Write cleaner code",
-  "Refactor old logic",
-  "Read docs"
-];
+// const todos = [
+//   "Learn something new",
+//   "Write cleaner code",
+//   "Refactor old logic",
+//   "Read docs"
+// ];
 
-console.log("Today's task:", todos[Math.floor(Math.random() * todos.length)]);
+// console.log("Today's task:", todos[Math.floor(Math.random() * todos.length)]);
+
+
+
+
+const featureEnabled = Math.random() > 0.5;
+
+console.log("Feature enabled:", featureEnabled);
+
 
