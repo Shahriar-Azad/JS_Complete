@@ -1068,6 +1068,17 @@
 // console.log(`GitHub streak day: ${streakCount}`);
 
 
-const randomNumber = Math.floor(Math.random() * 10000);
+// const randomNumber = Math.floor(Math.random() * 10000);
 
-console.log("Random value:", randomNumber);
+// console.log("Random value:", randomNumber);
+
+
+
+const crypto = require("crypto");
+
+const hash = crypto
+  .createHash("sha256")
+  .update(new Date().toDateString())
+  .digest("hex");
+
+console.log("Daily hash:", hash);
