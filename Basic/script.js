@@ -1097,8 +1097,22 @@
 
 
 
-const featureEnabled = Math.random() > 0.5;
+// const featureEnabled = Math.random() > 0.5;
 
-console.log("Feature enabled:", featureEnabled);
+// console.log("Feature enabled:", featureEnabled);
 
 
+
+const day = new Date().getDay();
+
+const motivation = [
+  "Sunday reset mode 🧘",
+  "Monday grind 💪",
+  "Tuesday momentum 🔥",
+  "Wednesday focus 🎯",
+  "Thursday push 🚀",
+  "Friday wins 🏆",
+  "Saturday chill 😌"
+];
+
+console.log(motivation[day]);
