@@ -1103,16 +1103,30 @@
 
 
 
-const day = new Date().getDay();
+// const day = new Date().getDay();
 
-const motivation = [
-  "Sunday reset mode 🧘",
-  "Monday grind 💪",
-  "Tuesday momentum 🔥",
-  "Wednesday focus 🎯",
-  "Thursday push 🚀",
-  "Friday wins 🏆",
-  "Saturday chill 😌"
-];
+// const motivation = [
+//   "Sunday reset mode 🧘",
+//   "Monday grind 💪",
+//   "Tuesday momentum 🔥",
+//   "Wednesday focus 🎯",
+//   "Thursday push 🚀",
+//   "Friday wins 🏆",
+//   "Saturday chill 😌"
+// ];
 
-console.log(motivation[day]);
+// console.log(motivation[day]);
+
+
+
+let version = "1.0.0";
+
+const bumpPatch = v => {
+  const parts = v.split(".").map(Number);
+  parts[2]++;
+  return parts.join(".");
+};
+
+version = bumpPatch(version);
+console.log("Current version:", version);
+
