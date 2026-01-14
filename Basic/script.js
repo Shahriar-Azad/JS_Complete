@@ -1150,8 +1150,15 @@
 // );
 
 
-const multiply = (a, b) => a * b;
-const divide = (a, b) => (b !== 0 ? a / b : null);
+// const multiply = (a, b) => a * b;
+// const divide = (a, b) => (b !== 0 ? a / b : null);
 
-console.log(multiply(4, 6));
-console.log(divide(10, 2));
+// console.log(multiply(4, 6));
+// console.log(divide(10, 2));
+
+
+const items = [1, 2, 3, 4, 5];
+
+items.sort(() => Math.random() - 0.5);
+
+console.log(items);
