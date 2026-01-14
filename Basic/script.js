@@ -1119,14 +1119,24 @@
 
 
 
-let version = "1.0.0";
+// let version = "1.0.0";
 
-const bumpPatch = v => {
-  const parts = v.split(".").map(Number);
-  parts[2]++;
-  return parts.join(".");
-};
+// const bumpPatch = v => {
+//   const parts = v.split(".").map(Number);
+//   parts[2]++;
+//   return parts.join(".");
+// };
 
-version = bumpPatch(version);
-console.log("Current version:", version);
+// version = bumpPatch(version);
+// console.log("Current version:", version);
 
+
+
+const fs = require("fs");
+
+fs.writeFileSync(
+  "lastRun.txt",
+  `Last run: ${new Date().toISOString()}`
+);
+
+console.log("Timestamp updated");
