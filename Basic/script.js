@@ -1143,8 +1143,15 @@
 
 
 
-const emojis = ["🔥", "🚀", "✨", "🧠", "💻", "✅"];
+// const emojis = ["🔥", "🚀", "✨", "🧠", "💻", "✅"];
 
-console.log(
-  emojis[Math.floor(Math.random() * emojis.length)]
-);
+// console.log(
+//   emojis[Math.floor(Math.random() * emojis.length)]
+// );
+
+
+const multiply = (a, b) => a * b;
+const divide = (a, b) => (b !== 0 ? a / b : null);
+
+console.log(multiply(4, 6));
+console.log(divide(10, 2));
