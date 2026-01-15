@@ -1157,8 +1157,14 @@
 // console.log(divide(10, 2));
 
 
-const items = [1, 2, 3, 4, 5];
+// const items = [1, 2, 3, 4, 5];
 
-items.sort(() => Math.random() - 0.5);
+// items.sort(() => Math.random() - 0.5);
 
-console.log(items);
+// console.log(items);
+
+
+
+const { randomUUID } = require("crypto");
+
+console.log("UUID:", randomUUID());
