@@ -1170,8 +1170,21 @@
 // console.log("UUID:", randomUUID());
 
 
-const cache = {
-  cachedAt: new Date().toISOString()
-};
+// const cache = {
+//   cachedAt: new Date().toISOString()
+// };
 
-console.log(cache);
+// console.log(cache);
+
+
+const tips = [
+  "Write small commits",
+  "Name variables clearly",
+  "Refactor often",
+  "Read error messages carefully",
+  "Test before pushing"
+];
+
+console.log(
+  tips[Math.floor(Math.random() * tips.length)]
+);
