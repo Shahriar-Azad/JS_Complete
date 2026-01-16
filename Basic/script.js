@@ -1210,6 +1210,10 @@
 // });
 
 
-const items = ["JS", "React", "Node", "MongoDB", "CSS"];
-console.log("Picked:", items[Math.floor(Math.random() * items.length)]);
+// const items = ["JS", "React", "Node", "MongoDB", "CSS"];
+// console.log("Picked:", items[Math.floor(Math.random() * items.length)]);
 
+
+
+const latency = Math.floor(Math.random() * 300) + "ms";
+console.log("API latency:", latency);
