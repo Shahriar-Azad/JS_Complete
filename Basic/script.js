@@ -1199,6 +1199,12 @@
 // console.log(stats);
 
 
-const password = Math.random().toString(36).slice(-10);
-console.log("Generated password:", password);
+// const password = Math.random().toString(36).slice(-10);
+// console.log("Generated password:", password);
 
+
+
+console.log({
+  localeTime: new Date().toLocaleTimeString(),
+  timezone: Intl.DateTimeFormat().resolvedOptions().timeZone
+});
