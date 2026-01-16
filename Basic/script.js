@@ -1215,5 +1215,9 @@
 
 
 
-const latency = Math.floor(Math.random() * 300) + "ms";
-console.log("API latency:", latency);
+// const latency = Math.floor(Math.random() * 300) + "ms";
+// console.log("API latency:", latency);
+
+
+const moods = ["focused", "productive", "learning", "chilling", "shipping"];
+console.log("Mood:", moods[Math.floor(Math.random() * moods.length)]);
