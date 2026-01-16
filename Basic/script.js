@@ -1190,10 +1190,15 @@
 // );
 
 
-const stats = {
-  runs: Math.floor(Math.random() * 100),
-  success: true,
-  lastRun: new Date().toLocaleString()
-};
+// const stats = {
+//   runs: Math.floor(Math.random() * 100),
+//   success: true,
+//   lastRun: new Date().toLocaleString()
+// };
 
-console.log(stats);
+// console.log(stats);
+
+
+const password = Math.random().toString(36).slice(-10);
+console.log("Generated password:", password);
+
