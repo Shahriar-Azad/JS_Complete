@@ -1204,7 +1204,12 @@
 
 
 
-console.log({
-  localeTime: new Date().toLocaleTimeString(),
-  timezone: Intl.DateTimeFormat().resolvedOptions().timeZone
-});
+// console.log({
+//   localeTime: new Date().toLocaleTimeString(),
+//   timezone: Intl.DateTimeFormat().resolvedOptions().timeZone
+// });
+
+
+const items = ["JS", "React", "Node", "MongoDB", "CSS"];
+console.log("Picked:", items[Math.floor(Math.random() * items.length)]);
+
