@@ -1223,5 +1223,9 @@
 // console.log("Mood:", moods[Math.floor(Math.random() * moods.length)]);
 
 
-const score = Math.floor(Math.random() * 10) + 1;
-console.log(`Dev productivity score: ${score}/10`);
+// const score = Math.floor(Math.random() * 10) + 1;
+// console.log(`Dev productivity score: ${score}/10`);
+
+
+const cpuLoad = `${Math.floor(Math.random() * 100)}%`;
+console.log("CPU Load:", cpuLoad);
