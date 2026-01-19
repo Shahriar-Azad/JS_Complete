@@ -1227,5 +1227,15 @@
 // console.log(`Dev productivity score: ${score}/10`);
 
 
-const cpuLoad = `${Math.floor(Math.random() * 100)}%`;
-console.log("CPU Load:", cpuLoad);
+// const cpuLoad = `${Math.floor(Math.random() * 100)}%`;
+// console.log("CPU Load:", cpuLoad);
+
+
+
+const activity = {
+  userId: Math.floor(Math.random() * 1000),
+  action: "login",
+  time: new Date().toISOString()
+};
+
+console.log(activity);
