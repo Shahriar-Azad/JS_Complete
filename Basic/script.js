@@ -1219,5 +1219,9 @@
 // console.log("API latency:", latency);
 
 
-const moods = ["focused", "productive", "learning", "chilling", "shipping"];
-console.log("Mood:", moods[Math.floor(Math.random() * moods.length)]);
+// const moods = ["focused", "productive", "learning", "chilling", "shipping"];
+// console.log("Mood:", moods[Math.floor(Math.random() * moods.length)]);
+
+
+const score = Math.floor(Math.random() * 10) + 1;
+console.log(`Dev productivity score: ${score}/10`);
