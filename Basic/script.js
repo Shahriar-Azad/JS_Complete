@@ -1232,10 +1232,28 @@
 
 
 
-const activity = {
-  userId: Math.floor(Math.random() * 1000),
-  action: "login",
-  time: new Date().toISOString()
-};
+// const activity = {
+//   userId: Math.floor(Math.random() * 1000),
+//   action: "login",
+//   time: new Date().toISOString()
+// };
 
-console.log(activity);
+// console.log(activity);
+
+
+function deepClone(value, seen = new WeakMap()) {
+  if (value === null || typeof value !== "object") return value;
+
+  if (seen.has(value)) return seen.get(value);
+
+  const clone = Array.isArray(value) ? [] : {};
+  seen.set(value, clone);
+
+  for (const key in value) {
+    if (Object.prototype.hasOwnProperty.call(value, key)) {
+      clone[key] = deepClone(value[key], seen);
+    }
+  }
+
+  return clone;
+}
