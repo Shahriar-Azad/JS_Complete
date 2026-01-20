@@ -1260,14 +1260,35 @@
 
 
 
-function debounce(fn, delay = 300) {
-  let timer;
+// function debounce(fn, delay = 300) {
+//   let timer;
 
-  return function (...args) {
-    clearTimeout(timer);
-    timer = setTimeout(() => {
-      fn.apply(this, args);
-    }, delay);
-  };
+//   return function (...args) {
+//     clearTimeout(timer);
+//     timer = setTimeout(() => {
+//       fn.apply(this, args);
+//     }, delay);
+//   };
+// }
+
+
+class EventEmitter {
+  constructor() {
+    this.events = {};
+  }
+
+  on(event, listener) {
+    (this.events[event] ||= []).push(listener);
+  }
+
+  emit(event, ...args) {
+    if (!this.events[event]) return;
+    this.events[event].forEach(fn => fn(...args));
+  }
+
+  off(event, listener) {
+    this.events[event] =
+      this.events[event]?.filter(fn => fn !== listener);
+  }
 }
 
