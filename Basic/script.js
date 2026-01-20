@@ -1272,23 +1272,32 @@
 // }
 
 
-class EventEmitter {
-  constructor() {
-    this.events = {};
-  }
+// class EventEmitter {
+//   constructor() {
+//     this.events = {};
+//   }
 
-  on(event, listener) {
-    (this.events[event] ||= []).push(listener);
-  }
+//   on(event, listener) {
+//     (this.events[event] ||= []).push(listener);
+//   }
 
-  emit(event, ...args) {
-    if (!this.events[event]) return;
-    this.events[event].forEach(fn => fn(...args));
-  }
+//   emit(event, ...args) {
+//     if (!this.events[event]) return;
+//     this.events[event].forEach(fn => fn(...args));
+//   }
 
-  off(event, listener) {
-    this.events[event] =
-      this.events[event]?.filter(fn => fn !== listener);
+//   off(event, listener) {
+//     this.events[event] =
+//       this.events[event]?.filter(fn => fn !== listener);
+//   }
+// }
+
+async function retry(fn, retries = 3, delay = 500) {
+  try {
+    return await fn();
+  } catch (err) {
+    if (retries === 0) throw err;
+    await new Promise(res => setTimeout(res, delay));
+    return retry(fn, retries - 1, delay);
   }
 }
-
