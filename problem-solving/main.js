@@ -73,13 +73,27 @@
 // };
 // person.greet(); 
 
-const car = {
-    name: "Lambo",
-    color: "blue",
-    race: function(){
-        console.log(this.name);
-        console.log(this.color);
-    }
-}
+// const car = {
+//     name: "Lambo",
+//     color: "blue",
+//     race: function(){
+//         console.log(this.name);
+//         console.log(this.color);
+//     }
+// }
 
-car.race();
+// car.race();
+
+function flattenArray(arr) {
+  let result = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (Array.isArray(arr[i])) {
+      result = result.concat(flattenArray(arr[i]));
+    } else {
+      result.push(arr[i]);
+    }
+  }
+
+  return result;
+}
