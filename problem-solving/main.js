@@ -84,16 +84,81 @@
 
 // car.race();
 
-function flattenArray(arr) {
-  let result = [];
+// function flattenArray(arr) {
+//   let result = [];
 
-  for (let i = 0; i < arr.length; i++) {
-    if (Array.isArray(arr[i])) {
-      result = result.concat(flattenArray(arr[i]));
-    } else {
-      result.push(arr[i]);
+//   for (let i = 0; i < arr.length; i++) {
+//     if (Array.isArray(arr[i])) {
+//       result = result.concat(flattenArray(arr[i]));
+//     } else {
+//       result.push(arr[i]);
+//     }
+//   }
+
+//   return result;
+// }
+
+
+
+// const timer = setInterval(() => {
+//   console.log("Hello World");
+// }, 2000);
+
+// setTimeout(() => {
+
+// clearInterval(timer);
+// }, 4000);
+
+// function palindrome(str){
+//     const reversed = str.split('').reverse().join('');
+//     return str === reversed;  
+// }
+
+// palindrome("racecar");
+
+
+
+// function reverseArr(arr){
+//   let reverse = ""
+//   for(const char of arr){
+//     reverse = char + reverse
+//   }
+//   return reverse;
+// }
+
+// console.log(reverseArr("hello"))
+
+
+// function reverseArr(arr){
+//   let reverse = []
+//   for(let i = arr.length-1; i >= 0; i--){
+//     reverse.push(arr[i]);
+//   }
+//   return reverse;
+// }
+
+
+// console.log(reverseArr([10,20,40]))
+
+
+// function palindrome(str){
+//   const rev = str.split('').reverse().join('');
+//   return rev === str
+// }
+
+// console.log(palindrome("adsdsa"));
+
+function pal(str){
+
+  for (let i = str.length-1; i >= 0; i--){
+    if(str === i){
+      console.log("true")
     }
-  }
+    else{
+      console.log("false")
+    }
 
-  return result;
+  }
 }
+
+console.log(pal("madam"))
