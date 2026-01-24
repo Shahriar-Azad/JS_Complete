@@ -148,17 +148,25 @@
 
 // console.log(palindrome("adsdsa"));
 
-function pal(str){
+// function pal(str){
 
-  for (let i = str.length-1; i >= 0; i--){
-    if(str === i){
-      console.log("true")
-    }
-    else{
-      console.log("false")
-    }
+//   for (let i = str.length-1; i >= 0; i--){
+//     if(str === i){
+//       console.log("true")
+//     }
+//     else{
+//       console.log("false")
+//     }
 
-  }
+//   }
+// }
+
+// console.log(pal("madam"))
+
+
+function evenArr(arr){
+  const rev = arr.map((i)=> i%2 === 0)
+  return rev
 }
 
-console.log(pal("madam"))
+console.log(evenArr([10,21,30,40]))
