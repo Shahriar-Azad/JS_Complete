@@ -213,19 +213,27 @@
 // console.log(evenArr[10,20,30,51,31,60])
 
 
-function evenArr(arr) {
-  let evenNum = [];
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] % 2 !== 0) {
-      evenNum.push(true);
-    } else {
-      evenNum.push(false);
-    }
-  }
-  return evenNum;
+// function evenArr(arr) {
+//   let evenNum = [];
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] % 2 !== 0) {
+//       evenNum.push(true);
+//     } else {
+//       evenNum.push(false);
+//     }
+//   }
+//   return evenNum;
+// }
+
+// console.log(evenArr([10, 20, 30, 51, 31, 60]));
+
+
+
+function add(a,b){
+    return a+b;
 }
 
-console.log(evenArr([10, 20, 30, 51, 31, 60]));
+console.log(add(2,3));
 
 
 
