@@ -164,9 +164,74 @@
 // console.log(pal("madam"))
 
 
-function evenArr(arr){
-  const rev = arr.map((i)=> i%2 === 0)
-  return rev
+// function evenArr(arr){
+//   const rev = arr.map((i)=> i%2 === 0)
+//   return rev
+// }
+
+// console.log(evenArr([10,21,30,40]))
+
+
+
+
+
+
+
+// function reverseString(str){
+//   let reverse = ""
+//   for(let i = str.length -1; i >= 0; i--){
+//     reverse = reverse + str[i];
+
+//   }
+//   return reverse;
+
+// }
+
+// console.log(reverseString("obyda"))
+
+
+// even number check from an array:
+
+// function evenArr(arr){
+//   let evenNum = arr.map((i)=> i%2 === 0);
+//   return evenNum;
+// }
+
+// console.log(evenArr([10,20,30,51,31,60]))
+
+
+// function evenArr(arr){
+//   for(i = 0; i < arr.length; i++){
+//   if (arr[i] % 2 === 0){
+//     return true;
+
+//   }
+  
+// }
+// return false;
+// }
+// console.log(evenArr[10,20,30,51,31,60])
+
+
+function evenArr(arr) {
+  let evenNum = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 !== 0) {
+      evenNum.push(true);
+    } else {
+      evenNum.push(false);
+    }
+  }
+  return evenNum;
 }
 
-console.log(evenArr([10,21,30,40]))
+console.log(evenArr([10, 20, 30, 51, 31, 60]));
+
+
+
+// Check palindrome
+// Check anagrame
+// even number check
+// odd number check
+// reverse a string
+// reverse an array
