@@ -245,15 +245,27 @@ console.log(add(2,3));
 // reverse an array
 
 
-function memoize(fn, resolver = (...args) => JSON.stringify(args)) {
-  const cache = new Map();
+// function memoize(fn, resolver = (...args) => JSON.stringify(args)) {
+//   const cache = new Map();
 
-  return function (...args) {
-    const key = resolver(...args);
-    if (cache.has(key)) return cache.get(key);
+//   return function (...args) {
+//     const key = resolver(...args);
+//     if (cache.has(key)) return cache.get(key);
 
-    const result = fn.apply(this, args);
-    cache.set(key, result);
-    return result;
-  };
+//     const result = fn.apply(this, args);
+//     cache.set(key, result);
+//     return result;
+//   };
+// }
+
+
+
+async function retry(fn, retries = 3, delay = 500) {
+  try {
+    return await fn();
+  } catch (err) {
+    if (retries === 0) throw err;
+    await new Promise(res => setTimeout(res, delay));
+    return retry(fn, retries - 1, delay);
+  }
 }
