@@ -269,3 +269,14 @@
 //     return retry(fn, retries - 1, delay);
 //   }
 // }
+
+
+
+const btn1 = document.getElementById("btn1");
+
+const btn2 = document.getElementById("btn2");
+
+
+btn2.addEventListener("mouseover",()=>{
+  btn2.textContent = "Noooo";
+})
