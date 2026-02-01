@@ -272,11 +272,25 @@
 
 
 
-const btn1 = document.getElementById("btn1");
+// const btn1 = document.getElementById("btn1");
 
+// const btn2 = document.getElementById("btn2");
+
+
+// btn2.addEventListener("mouseover",()=>{
+//   btn2.textContent = "Noooo";
+// })
+
+
+const btn1 = document.getElementById("btn1");
 const btn2 = document.getElementById("btn2");
 
+btn2.addEventListener("mouseover", () => {
+  const x = Math.random() * (window.innerWidth - btn2.offsetWidth);
+  const y = Math.random() * (window.innerHeight - btn2.offsetHeight);
 
-btn2.addEventListener("mouseover",()=>{
+  btn2.style.position = "absolute";
+  btn2.style.left = `${x}px`;
+  btn2.style.top = `${y}px`;
   btn2.textContent = "Noooo";
-})
+});
