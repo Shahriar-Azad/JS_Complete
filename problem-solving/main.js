@@ -292,5 +292,5 @@ btn2.addEventListener("mouseover", () => {
   btn2.style.position = "absolute";
   btn2.style.left = `${x}px`;
   btn2.style.top = `${y}px`;
-  btn2.textContent = "Noooo";
+  // btn2.textContent = "Noooo";
 });
