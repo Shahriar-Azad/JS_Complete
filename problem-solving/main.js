@@ -229,11 +229,11 @@
 
 
 
-function add(a,b){
-    return a+b;
-}
+// function add(a,b){
+//     return a+b;
+// }
 
-console.log(add(2,3));
+// console.log(add(2,3));
 
 
 
@@ -260,12 +260,12 @@ console.log(add(2,3));
 
 
 
-async function retry(fn, retries = 3, delay = 500) {
-  try {
-    return await fn();
-  } catch (err) {
-    if (retries === 0) throw err;
-    await new Promise(res => setTimeout(res, delay));
-    return retry(fn, retries - 1, delay);
-  }
-}
+// async function retry(fn, retries = 3, delay = 500) {
+//   try {
+//     return await fn();
+//   } catch (err) {
+//     if (retries === 0) throw err;
+//     await new Promise(res => setTimeout(res, delay));
+//     return retry(fn, retries - 1, delay);
+//   }
+// }
