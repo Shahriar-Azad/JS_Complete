@@ -320,26 +320,37 @@
 
 
 
-class LRUCache {
-  constructor(limit = 5) {
-    this.limit = limit;
-    this.cache = new Map();
-  }
+// class LRUCache {
+//   constructor(limit = 5) {
+//     this.limit = limit;
+//     this.cache = new Map();
+//   }
 
-  get(key) {
-    if (!this.cache.has(key)) return null;
-    const val = this.cache.get(key);
-    this.cache.delete(key);
-    this.cache.set(key, val);
-    return val;
-  }
+//   get(key) {
+//     if (!this.cache.has(key)) return null;
+//     const val = this.cache.get(key);
+//     this.cache.delete(key);
+//     this.cache.set(key, val);
+//     return val;
+//   }
 
-  put(key, value) {
-    if (this.cache.has(key)) this.cache.delete(key);
-    else if (this.cache.size >= this.limit) {
-      const firstKey = this.cache.keys().next().value;
-      this.cache.delete(firstKey);
-    }
-    this.cache.set(key, value);
-  }
-}
+//   put(key, value) {
+//     if (this.cache.has(key)) this.cache.delete(key);
+//     else if (this.cache.size >= this.limit) {
+//       const firstKey = this.cache.keys().next().value;
+//       this.cache.delete(firstKey);
+//     }
+//     this.cache.set(key, value);
+//   }
+// }
+
+
+
+const compose = (...fns) => input =>
+  fns.reduceRight((val, fn) => fn(val), input);
+
+// usage
+const double = x => x * 2;
+const square = x => x * x;
+
+const result = compose(square, double)(3); // 36
