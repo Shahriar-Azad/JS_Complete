@@ -282,15 +282,38 @@
 // })
 
 
-const btn1 = document.getElementById("btn1");
-const btn2 = document.getElementById("btn2");
+// const btn1 = document.getElementById("btn1");
+// const btn2 = document.getElementById("btn2");
 
-btn2.addEventListener("mouseover", () => {
-  const x = Math.random() * (window.innerWidth - btn2.offsetWidth);
-  const y = Math.random() * (window.innerHeight - btn2.offsetHeight);
+// btn2.addEventListener("mouseover", () => {
+//   const x = Math.random() * (window.innerWidth - btn2.offsetWidth);
+//   const y = Math.random() * (window.innerHeight - btn2.offsetHeight);
 
-  btn2.style.position = "absolute";
-  btn2.style.left = `${x}px`;
-  btn2.style.top = `${y}px`;
-  // btn2.textContent = "Noooo";
-});
+//   btn2.style.position = "absolute";
+//   btn2.style.left = `${x}px`;
+//   btn2.style.top = `${y}px`;
+//   // btn2.textContent = "Noooo";
+// });
+
+
+
+async function promisePool(tasks, limit = 3) {
+  const results = [];
+  const executing = [];
+
+  for (const task of tasks) {
+    const p = Promise.resolve().then(task);
+    results.push(p);
+
+    if (limit <= tasks.length) {
+      const e = p.then(() => executing.splice(executing.indexOf(e), 1));
+      executing.push(e);
+
+      if (executing.length >= limit) {
+        await Promise.race(executing);
+      }
+    }
+  }
+
+  return Promise.all(results);
+}

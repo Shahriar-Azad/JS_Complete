@@ -3,25 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interview Prep</title>
-</head>
-<style>
-    #btn1 {
-        cursor: pointer;
-    }
+    <title>ZPD Special Assignment</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --nick-orange: #e67e22;
+            --judy-grey: #95a5a6;
+            --police-blue: #2980b9;
+            --pawpsicle-red: #ff4757;
+        }
 
-    #btn2{
-        cursor: pointer;
-    }
-</style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #74ebd5, #acb6e5);
+            font-family: 'Nunito', sans-serif;
+            overflow: hidden;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 40px;
+            box-shadow: 0 15px 0px rgba(0,0,0,0.1);
+            border: 10px solid var(--nick-orange);
+            max-width: 450px;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .header-icons {
+            font-size: 50px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        h1 {
+            color: var(--police-blue);
+            font-family: 'Fredoka One', cursive;
+            font-size: 2.2rem;
+            margin: 10px 0;
+            line-height: 1.2;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-top: 40px;
+            position: relative;
+            height: 60px; /* Constrains height for horizontal alignment */
+        }
+
+        button {
+            padding: 15px 40px;
+            font-size: 1.3rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: 'Fredoka One', cursive;
+            transition: transform 0.2s;
+            white-space: nowrap;
+        }
+
+        #yesBtn {
+            background-color: var(--pawpsicle-red);
+            color: white;
+            box-shadow: 0 6px 0 #c0392b;
+            z-index: 2;
+        }
+
+        #noBtn {
+            background-color: var(--judy-grey);
+            color: white;
+            box-shadow: 0 6px 0 #7f8c8d;
+            transition: all 0.1s ease-out;
+            z-index: 1;
+        }
+
+        .success-screen {
+            display: none;
+            animation: pop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes pop {
+            0% { transform: scale(0.5); }
+            100% { transform: scale(1); }
+        }
+
+        .floating-emoji {
+            position: absolute;
+            pointer-events: none;
+            z-index: 1;
+            animation: float 3s linear forwards;
+        }
+
+        @keyframes float {
+            to { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+    </style>
+</head>
 <body>
 
-    <button id="btn1">Yes</button>
-    <button id="btn2">No</button>
-    
-    
+    <div class="container" id="mainCard">
+        <div id="proposal">
+            <div class="header-icons">🦊 🚓 🐰</div>
+            <h1>It’s called a hustle, sweetheart...</h1>
+            <p>Will you be my Valentine?</p>
+            <div class="buttons">
+                <button id="yesBtn" onclick="showSuccess()">YES! 🥕</button>
+                <button id="noBtn" onmouseover="moveNo()">No ❌</button>
+            </div>
+        </div>
 
-    <script src="main.js"></script>
-    
+        <div id="success" class="success-screen">
+            <h1 style="color: var(--pawpsicle-red);">Case Closed! ❤️</h1>
+            <p>You’re officially my partner in crime.</p>
+            <div style="font-size: 50px;">🦊🏙️🐰</div>
+        </div>
+    </div>
+
+    <script>
+        const noBtn = document.getElementById('noBtn');
+        const proposal = document.getElementById('proposal');
+        const success = document.getElementById('success');
+
+        function moveNo() {
+            const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+            const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+            
+            noBtn.style.position = 'fixed';
+            noBtn.style.left = x + 'px';
+            noBtn.style.top = y + 'px';
+        }
+
+        function showSuccess() {
+            proposal.style.display = 'none';
+            success.style.display = 'block';
+            
+            const emojis = ['🥕', '🐾', '❤️', '🍩'];
+            for (let i = 0; i < 30; i++) {
+                setTimeout(() => {
+                    const el = document.createElement('div');
+                    el.className = 'floating-emoji';
+                    el.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+                    el.style.left = Math.random() * 100 + 'vw';
+                    el.style.top = '100vh';
+                    el.style.fontSize = '25px';
+                    document.body.appendChild(el);
+                    setTimeout(() => el.remove(), 3000);
+                }, i * 100);
+            }
+        }
+    </script>
 </body>
 </html>
