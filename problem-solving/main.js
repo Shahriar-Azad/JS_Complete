@@ -356,10 +356,22 @@
 // const result = compose(square, double)(3); // 36
 
 
-function safeJSONParse(str, fallback = null) {
-  try {
-    return JSON.parse(str);
-  } catch {
-    return fallback;
+// function safeJSONParse(str, fallback = null) {
+//   try {
+//     return JSON.parse(str);
+//   } catch {
+//     return fallback;
+//   }
+// }
+
+
+class AsyncQueue {
+  constructor() {
+    this.queue = Promise.resolve();
+  }
+
+  enqueue(task) {
+    this.queue = this.queue.then(() => task()).catch(() => {});
+    return this.queue;
   }
 }
