@@ -365,13 +365,27 @@
 // }
 
 
-class AsyncQueue {
-  constructor() {
-    this.queue = Promise.resolve();
-  }
+// class AsyncQueue {
+//   constructor() {
+//     this.queue = Promise.resolve();
+//   }
 
-  enqueue(task) {
-    this.queue = this.queue.then(() => task()).catch(() => {});
-    return this.queue;
-  }
+//   enqueue(task) {
+//     this.queue = this.queue.then(() => task()).catch(() => {});
+//     return this.queue;
+//   }
+// }
+
+
+function throttle(fn, limit = 300) {
+  let inThrottle = false;
+
+  return function (...args) {
+    if (!inThrottle) {
+      fn.apply(this, args);
+      inThrottle = true;
+      setTimeout(() => (inThrottle = false), limit);
+    }
+  };
 }
+
