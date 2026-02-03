@@ -346,11 +346,20 @@
 
 
 
-const compose = (...fns) => input =>
-  fns.reduceRight((val, fn) => fn(val), input);
+// const compose = (...fns) => input =>
+//   fns.reduceRight((val, fn) => fn(val), input);
 
-// usage
-const double = x => x * 2;
-const square = x => x * x;
+// // usage
+// const double = x => x * 2;
+// const square = x => x * x;
 
-const result = compose(square, double)(3); // 36
+// const result = compose(square, double)(3); // 36
+
+
+function safeJSONParse(str, fallback = null) {
+  try {
+    return JSON.parse(str);
+  } catch {
+    return fallback;
+  }
+}
