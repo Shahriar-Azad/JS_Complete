@@ -390,19 +390,33 @@
 // }
 
 
-function deepFreeze(obj) {
-  Object.freeze(obj);
+// function deepFreeze(obj) {
+//   Object.freeze(obj);
 
-  Object.getOwnPropertyNames(obj).forEach(prop => {
-    if (
-      obj[prop] !== null &&
-      (typeof obj[prop] === "object" || typeof obj[prop] === "function") &&
-      !Object.isFrozen(obj[prop])
-    ) {
-      deepFreeze(obj[prop]);
-    }
-  });
+//   Object.getOwnPropertyNames(obj).forEach(prop => {
+//     if (
+//       obj[prop] !== null &&
+//       (typeof obj[prop] === "object" || typeof obj[prop] === "function") &&
+//       !Object.isFrozen(obj[prop])
+//     ) {
+//       deepFreeze(obj[prop]);
+//     }
+//   });
 
-  return obj;
+//   return obj;
+// }
+
+
+
+function parseQuery(query) {
+  return query
+    .replace(/^\?/, "")
+    .split("&")
+    .reduce((acc, pair) => {
+      const [key, value] = pair.split("=");
+      acc[decodeURIComponent(key)] = decodeURIComponent(value || "");
+      return acc;
+    }, {});
 }
+
 
