@@ -377,15 +377,32 @@
 // }
 
 
-function throttle(fn, limit = 300) {
-  let inThrottle = false;
+// function throttle(fn, limit = 300) {
+//   let inThrottle = false;
 
-  return function (...args) {
-    if (!inThrottle) {
-      fn.apply(this, args);
-      inThrottle = true;
-      setTimeout(() => (inThrottle = false), limit);
+//   return function (...args) {
+//     if (!inThrottle) {
+//       fn.apply(this, args);
+//       inThrottle = true;
+//       setTimeout(() => (inThrottle = false), limit);
+//     }
+//   };
+// }
+
+
+function deepFreeze(obj) {
+  Object.freeze(obj);
+
+  Object.getOwnPropertyNames(obj).forEach(prop => {
+    if (
+      obj[prop] !== null &&
+      (typeof obj[prop] === "object" || typeof obj[prop] === "function") &&
+      !Object.isFrozen(obj[prop])
+    ) {
+      deepFreeze(obj[prop]);
     }
-  };
+  });
+
+  return obj;
 }
 
