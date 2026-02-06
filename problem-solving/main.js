@@ -421,14 +421,21 @@
 
 
 
-function uniqueBy(arr, key) {
-  const seen = new Set();
-  return arr.filter(item => {
-    const val = item[key];
-    if (seen.has(val)) return false;
-    seen.add(val);
-    return true;
-  });
+// function uniqueBy(arr, key) {
+//   const seen = new Set();
+//   return arr.filter(item => {
+//     const val = item[key];
+//     if (seen.has(val)) return false;
+//     seen.add(val);
+//     return true;
+//   });
+// }
+
+
+function withTimeout(promise, ms = 2000) {
+  const timeout = new Promise((_, reject) =>
+    setTimeout(() => reject(new Error("Timeout")), ms)
+  );
+
+  return Promise.race([promise, timeout]);
 }
-
-
