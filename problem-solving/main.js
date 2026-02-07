@@ -487,12 +487,19 @@
 
 
 
-const pipe = (...fns) => input =>
-  fns.reduce((val, fn) => fn(val), input);
+// const pipe = (...fns) => input =>
+//   fns.reduce((val, fn) => fn(val), input);
 
-// usage
-pipe(
-  x => x + 1,
-  x => x * 2,
-  x => x - 3
-)(5); // 9
+// // usage
+// pipe(
+//   x => x + 1,
+//   x => x * 2,
+//   x => x - 3
+// )(5); // 9
+
+
+function get(obj, path, defaultValue = undefined) {
+  return path
+    .split(".")
+    .reduce((acc, key) => (acc && acc[key] !== undefined ? acc[key] : defaultValue), obj);
+}
