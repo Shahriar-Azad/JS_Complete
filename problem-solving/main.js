@@ -465,23 +465,34 @@
 //   return keysA.every(key => deepEqual(a[key], b[key]));
 // }
 
-function poll(fn, interval = 1000, maxAttempts = 5) {
-  let attempts = 0;
+// function poll(fn, interval = 1000, maxAttempts = 5) {
+//   let attempts = 0;
 
-  return new Promise((resolve, reject) => {
-    const timer = setInterval(async () => {
-      try {
-        const result = await fn();
-        attempts++;
-        if (result || attempts >= maxAttempts) {
-          clearInterval(timer);
-          resolve(result);
-        }
-      } catch (err) {
-        clearInterval(timer);
-        reject(err);
-      }
-    }, interval);
-  });
-}
+//   return new Promise((resolve, reject) => {
+//     const timer = setInterval(async () => {
+//       try {
+//         const result = await fn();
+//         attempts++;
+//         if (result || attempts >= maxAttempts) {
+//           clearInterval(timer);
+//           resolve(result);
+//         }
+//       } catch (err) {
+//         clearInterval(timer);
+//         reject(err);
+//       }
+//     }, interval);
+//   });
+// }
 
+
+
+const pipe = (...fns) => input =>
+  fns.reduce((val, fn) => fn(val), input);
+
+// usage
+pipe(
+  x => x + 1,
+  x => x * 2,
+  x => x - 3
+)(5); // 9
