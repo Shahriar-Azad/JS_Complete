@@ -452,15 +452,36 @@
 
 
 
-function deepEqual(a, b) {
-  if (a === b) return true;
-  if (typeof a !== typeof b || typeof a !== "object" || a === null || b === null)
-    return false;
+// function deepEqual(a, b) {
+//   if (a === b) return true;
+//   if (typeof a !== typeof b || typeof a !== "object" || a === null || b === null)
+//     return false;
 
-  const keysA = Object.keys(a);
-  const keysB = Object.keys(b);
+//   const keysA = Object.keys(a);
+//   const keysB = Object.keys(b);
 
-  if (keysA.length !== keysB.length) return false;
+//   if (keysA.length !== keysB.length) return false;
 
-  return keysA.every(key => deepEqual(a[key], b[key]));
+//   return keysA.every(key => deepEqual(a[key], b[key]));
+// }
+
+function poll(fn, interval = 1000, maxAttempts = 5) {
+  let attempts = 0;
+
+  return new Promise((resolve, reject) => {
+    const timer = setInterval(async () => {
+      try {
+        const result = await fn();
+        attempts++;
+        if (result || attempts >= maxAttempts) {
+          clearInterval(timer);
+          resolve(result);
+        }
+      } catch (err) {
+        clearInterval(timer);
+        reject(err);
+      }
+    }, interval);
+  });
 }
+
