@@ -527,12 +527,21 @@
 // }
 
 
-function chunkArray(arr, size = 2) {
-  const result = [];
-  for (let i = 0; i < arr.length; i += size) {
-    result.push(arr.slice(i, i + size));
-  }
-  return result;
+// function chunkArray(arr, size = 2) {
+//   const result = [];
+//   for (let i = 0; i < arr.length; i += size) {
+//     result.push(arr.slice(i, i + size));
+//   }
+//   return result;
+// }
+
+
+function flattenDeep(arr) {
+  return arr.reduce(
+    (acc, val) =>
+      Array.isArray(val) ? acc.concat(flattenDeep(val)) : acc.concat(val),
+    []
+  );
 }
 
 
