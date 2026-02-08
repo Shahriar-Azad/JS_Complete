@@ -498,8 +498,16 @@
 // )(5); // 9
 
 
-function get(obj, path, defaultValue = undefined) {
-  return path
-    .split(".")
-    .reduce((acc, key) => (acc && acc[key] !== undefined ? acc[key] : defaultValue), obj);
+// function get(obj, path, defaultValue = undefined) {
+//   return path
+//     .split(".")
+//     .reduce((acc, key) => (acc && acc[key] !== undefined ? acc[key] : defaultValue), obj);
+// }
+
+
+function stableSort(arr, compare) {
+  return arr
+    .map((item, index) => ({ item, index }))
+    .sort((a, b) => compare(a.item, b.item) || a.index - b.index)
+    .map(wrapper => wrapper.item);
 }
