@@ -513,16 +513,26 @@
 // }
 
 
-function once(fn) {
-  let called = false;
-  let result;
+// function once(fn) {
+//   let called = false;
+//   let result;
 
-  return function (...args) {
-    if (!called) {
-      called = true;
-      result = fn.apply(this, args);
-    }
-    return result;
-  };
+//   return function (...args) {
+//     if (!called) {
+//       called = true;
+//       result = fn.apply(this, args);
+//     }
+//     return result;
+//   };
+// }
+
+
+function chunkArray(arr, size = 2) {
+  const result = [];
+  for (let i = 0; i < arr.length; i += size) {
+    result.push(arr.slice(i, i + size));
+  }
+  return result;
 }
+
 
