@@ -505,9 +505,24 @@
 // }
 
 
-function stableSort(arr, compare) {
-  return arr
-    .map((item, index) => ({ item, index }))
-    .sort((a, b) => compare(a.item, b.item) || a.index - b.index)
-    .map(wrapper => wrapper.item);
+// function stableSort(arr, compare) {
+//   return arr
+//     .map((item, index) => ({ item, index }))
+//     .sort((a, b) => compare(a.item, b.item) || a.index - b.index)
+//     .map(wrapper => wrapper.item);
+// }
+
+
+function once(fn) {
+  let called = false;
+  let result;
+
+  return function (...args) {
+    if (!called) {
+      called = true;
+      result = fn.apply(this, args);
+    }
+    return result;
+  };
 }
+
