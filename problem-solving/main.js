@@ -569,8 +569,19 @@
 // }
 
 
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+// function sleep(ms) {
+//   return new Promise(resolve => setTimeout(resolve, ms));
+// }
+
+
+
+
+async function retryWithBackoff(fn, retries = 3, delay = 300) {
+  try {
+    return await fn();
+  } catch (err) {
+    if (retries === 0) throw err;
+    await new Promise(res => setTimeout(res, delay));
+    return retryWithBackoff(fn, retries - 1, delay * 2);
+  }
 }
-
-
