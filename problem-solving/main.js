@@ -576,12 +576,29 @@
 
 
 
-async function retryWithBackoff(fn, retries = 3, delay = 300) {
-  try {
-    return await fn();
-  } catch (err) {
-    if (retries === 0) throw err;
-    await new Promise(res => setTimeout(res, delay));
-    return retryWithBackoff(fn, retries - 1, delay * 2);
+// async function retryWithBackoff(fn, retries = 3, delay = 300) {
+//   try {
+//     return await fn();
+//   } catch (err) {
+//     if (retries === 0) throw err;
+//     await new Promise(res => setTimeout(res, delay));
+//     return retryWithBackoff(fn, retries - 1, delay * 2);
+//   }
+// }
+
+
+function compareVersions(v1, v2) {
+  const a = v1.split(".").map(Number);
+  const b = v2.split(".").map(Number);
+  const len = Math.max(a.length, b.length);
+
+  for (let i = 0; i < len; i++) {
+    const x = a[i] || 0;
+    const y = b[i] || 0;
+    if (x > y) return 1;
+    if (x < y) return -1;
   }
+
+  return 0;
 }
+
