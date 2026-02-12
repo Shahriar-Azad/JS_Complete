@@ -587,18 +587,31 @@
 // }
 
 
-function compareVersions(v1, v2) {
-  const a = v1.split(".").map(Number);
-  const b = v2.split(".").map(Number);
-  const len = Math.max(a.length, b.length);
+// function compareVersions(v1, v2) {
+//   const a = v1.split(".").map(Number);
+//   const b = v2.split(".").map(Number);
+//   const len = Math.max(a.length, b.length);
 
-  for (let i = 0; i < len; i++) {
-    const x = a[i] || 0;
-    const y = b[i] || 0;
-    if (x > y) return 1;
-    if (x < y) return -1;
+//   for (let i = 0; i < len; i++) {
+//     const x = a[i] || 0;
+//     const y = b[i] || 0;
+//     if (x > y) return 1;
+//     if (x < y) return -1;
+//   }
+
+//   return 0;
+// }
+
+
+function topKFrequent(arr, k) {
+  const freq = new Map();
+
+  for (const n of arr) {
+    freq.set(n, (freq.get(n) || 0) + 1);
   }
 
-  return 0;
+  return [...freq.entries()]
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, k)
+    .map(([key]) => key);
 }
-
