@@ -617,13 +617,30 @@
 // }
 
 
-function urlJoin(...parts) {
-  return parts
-    .map((part, i) =>
-      i === 0
-        ? part.replace(/\/+$/, "")
-        : part.replace(/^\/+|\/+$/g, "")
-    )
-    .join("/");
+// function urlJoin(...parts) {
+//   return parts
+//     .map((part, i) =>
+//       i === 0
+//         ? part.replace(/\/+$/, "")
+//         : part.replace(/^\/+|\/+$/g, "")
+//     )
+//     .join("/");
+// }
+
+
+
+async function mapLimit(arr, limit, asyncFn) {
+  const results = [];
+  let index = 0;
+
+  async function worker() {
+    while (index < arr.length) {
+      const current = index++;
+      results[current] = await asyncFn(arr[current]);
+    }
+  }
+
+  await Promise.all(Array.from({ length: limit }, worker));
+  return results;
 }
 
