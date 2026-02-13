@@ -629,18 +629,23 @@
 
 
 
-async function mapLimit(arr, limit, asyncFn) {
-  const results = [];
-  let index = 0;
+// async function mapLimit(arr, limit, asyncFn) {
+//   const results = [];
+//   let index = 0;
 
-  async function worker() {
-    while (index < arr.length) {
-      const current = index++;
-      results[current] = await asyncFn(arr[current]);
-    }
-  }
+//   async function worker() {
+//     while (index < arr.length) {
+//       const current = index++;
+//       results[current] = await asyncFn(arr[current]);
+//     }
+//   }
 
-  await Promise.all(Array.from({ length: limit }, worker));
-  return results;
+//   await Promise.all(Array.from({ length: limit }, worker));
+//   return results;
+// }
+
+
+function intersect(arr1, arr2) {
+  const set = new Set(arr2);
+  return [...new Set(arr1.filter(x => set.has(x)))];
 }
-
