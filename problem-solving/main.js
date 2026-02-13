@@ -645,7 +645,12 @@
 // }
 
 
-function intersect(arr1, arr2) {
-  const set = new Set(arr2);
-  return [...new Set(arr1.filter(x => set.has(x)))];
+// function intersect(arr1, arr2) {
+//   const set = new Set(arr2);
+//   return [...new Set(arr1.filter(x => set.has(x)))];
+// }
+
+
+function capitalizeWords(str) {
+  return str.replace(/\b\w/g, char => char.toUpperCase());
 }
