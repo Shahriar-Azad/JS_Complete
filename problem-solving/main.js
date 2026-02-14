@@ -667,8 +667,13 @@
 
 
 
-function isPlainObject(value) {
-  return (
-    Object.prototype.toString.call(value) === "[object Object]"
-  );
+// function isPlainObject(value) {
+//   return (
+//     Object.prototype.toString.call(value) === "[object Object]"
+//   );
+// }
+
+
+function clamp(value, min, max) {
+  return Math.min(Math.max(value, min), max);
 }
