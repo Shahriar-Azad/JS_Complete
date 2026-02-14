@@ -674,6 +674,19 @@
 // }
 
 
-function clamp(value, min, max) {
-  return Math.min(Math.max(value, min), max);
+// function clamp(value, min, max) {
+//   return Math.min(Math.max(value, min), max);
+// }
+
+
+function createLogger(level = "info") {
+  const levels = ["debug", "info", "warn", "error"];
+  const currentLevel = levels.indexOf(level);
+
+  return {
+    debug: (...args) => currentLevel <= 0 && console.debug(...args),
+    info: (...args) => currentLevel <= 1 && console.info(...args),
+    warn: (...args) => currentLevel <= 2 && console.warn(...args),
+    error: (...args) => currentLevel <= 3 && console.error(...args),
+  };
 }
