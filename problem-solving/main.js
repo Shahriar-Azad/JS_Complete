@@ -717,10 +717,18 @@
 //   return str.replace(/[&<>"']/g, m => map[m]);
 // }
 
-function range(start, end, step = 1) {
-  const result = [];
-  for (let i = start; i <= end; i += step) {
-    result.push(i);
-  }
-  return result;
+// function range(start, end, step = 1) {
+//   const result = [];
+//   for (let i = start; i <= end; i += step) {
+//     result.push(i);
+//   }
+//   return result;
+// }
+
+
+function pick(obj, keys = []) {
+  return keys.reduce((acc, key) => {
+    if (key in obj) acc[key] = obj[key];
+    return acc;
+  }, {});
 }
