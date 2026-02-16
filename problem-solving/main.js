@@ -705,14 +705,22 @@
 // }
 
 
-function escapeHTML(str) {
-  const map = {
-    "&": "&amp;",
-    "<": "&lt;",
-    ">": "&gt;",
-    '"': "&quot;",
-    "'": "&#039;",
-  };
+// function escapeHTML(str) {
+//   const map = {
+//     "&": "&amp;",
+//     "<": "&lt;",
+//     ">": "&gt;",
+//     '"': "&quot;",
+//     "'": "&#039;",
+//   };
 
-  return str.replace(/[&<>"']/g, m => map[m]);
+//   return str.replace(/[&<>"']/g, m => map[m]);
+// }
+
+function range(start, end, step = 1) {
+  const result = [];
+  for (let i = start; i <= end; i += step) {
+    result.push(i);
+  }
+  return result;
 }
