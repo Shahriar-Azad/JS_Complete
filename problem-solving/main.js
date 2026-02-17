@@ -741,20 +741,28 @@
 // }
 
 
-function timeAgo(timestamp) {
-  const seconds = Math.floor((Date.now() - timestamp) / 1000);
-  const intervals = [
-    [60, "seconds"],
-    [3600, "minutes"],
-    [86400, "hours"],
-    [604800, "days"],
-  ];
+// function timeAgo(timestamp) {
+//   const seconds = Math.floor((Date.now() - timestamp) / 1000);
+//   const intervals = [
+//     [60, "seconds"],
+//     [3600, "minutes"],
+//     [86400, "hours"],
+//     [604800, "days"],
+//   ];
 
-  for (let [limit, label] of intervals) {
-    if (seconds < limit) {
-      return `${Math.floor(seconds / (limit / 60))} ${label} ago`;
-    }
-  }
+//   for (let [limit, label] of intervals) {
+//     if (seconds < limit) {
+//       return `${Math.floor(seconds / (limit / 60))} ${label} ago`;
+//     }
+//   }
 
-  return "just now";
+//   return "just now";
+// }
+
+
+function ensureArray(value) {
+  if (Array.isArray(value)) return value;
+  if (value == null) return [];
+  return [value];
 }
+
