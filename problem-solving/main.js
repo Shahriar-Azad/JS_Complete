@@ -734,8 +734,27 @@
 // }
 
 
-function omit(obj, keys = []) {
-  const result = { ...obj };
-  keys.forEach(key => delete result[key]);
-  return result;
+// function omit(obj, keys = []) {
+//   const result = { ...obj };
+//   keys.forEach(key => delete result[key]);
+//   return result;
+// }
+
+
+function timeAgo(timestamp) {
+  const seconds = Math.floor((Date.now() - timestamp) / 1000);
+  const intervals = [
+    [60, "seconds"],
+    [3600, "minutes"],
+    [86400, "hours"],
+    [604800, "days"],
+  ];
+
+  for (let [limit, label] of intervals) {
+    if (seconds < limit) {
+      return `${Math.floor(seconds / (limit / 60))} ${label} ago`;
+    }
+  }
+
+  return "just now";
 }
