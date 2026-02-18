@@ -772,6 +772,11 @@
 // }
 
 
-function isEmptyObject(obj) {
-  return obj && Object.keys(obj).length === 0 && obj.constructor === Object;
+// function isEmptyObject(obj) {
+//   return obj && Object.keys(obj).length === 0 && obj.constructor === Object;
+// }
+
+
+function compact(arr) {
+  return arr.filter(Boolean);
 }
