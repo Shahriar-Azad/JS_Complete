@@ -760,9 +760,13 @@
 // }
 
 
-function ensureArray(value) {
-  if (Array.isArray(value)) return value;
-  if (value == null) return [];
-  return [value];
-}
+// function ensureArray(value) {
+//   if (Array.isArray(value)) return value;
+//   if (value == null) return [];
+//   return [value];
+// }
 
+
+function randomId(length = 8) {
+  return Math.random().toString(36).substr(2, length);
+}
