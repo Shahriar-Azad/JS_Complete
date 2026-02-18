@@ -767,6 +767,11 @@
 // }
 
 
-function randomId(length = 8) {
-  return Math.random().toString(36).substr(2, length);
+// function randomId(length = 8) {
+//   return Math.random().toString(36).substr(2, length);
+// }
+
+
+function isEmptyObject(obj) {
+  return obj && Object.keys(obj).length === 0 && obj.constructor === Object;
 }
