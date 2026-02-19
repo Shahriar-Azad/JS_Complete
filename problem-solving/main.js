@@ -781,16 +781,36 @@
 //   return arr.filter(Boolean);
 // }
 
-function twoSum(nums, target) {
-  const map = new Map();
+// function twoSum(nums, target) {
+//   const map = new Map();
 
-  for (let i = 0; i < nums.length; i++) {
-    const needed = target - nums[i];
+//   for (let i = 0; i < nums.length; i++) {
+//     const needed = target - nums[i];
 
-    if (map.has(needed)) {
-      return [map.get(needed), i];
+//     if (map.has(needed)) {
+//       return [map.get(needed), i];
+//     }
+
+//     map.set(nums[i], i);
+//   }
+// }
+
+
+function isValid(s) {
+  const stack = [];
+  const map = {
+    ")": "(",
+    "]": "[",
+    "}": "{"
+  };
+
+  for (const char of s) {
+    if (char === "(" || char === "[" || char === "{") {
+      stack.push(char);
+    } else {
+      if (stack.pop() !== map[char]) return false;
     }
-
-    map.set(nums[i], i);
   }
+
+  return stack.length === 0;
 }
