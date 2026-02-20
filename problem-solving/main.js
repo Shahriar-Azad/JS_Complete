@@ -832,14 +832,27 @@
 // }
 
 
-function maxSubArray(nums) {
-  let maxSum = nums[0];
-  let current = nums[0];
+// function maxSubArray(nums) {
+//   let maxSum = nums[0];
+//   let current = nums[0];
 
-  for (let i = 1; i < nums.length; i++) {
-    current = Math.max(nums[i], current + nums[i]);
-    maxSum = Math.max(maxSum, current);
+//   for (let i = 1; i < nums.length; i++) {
+//     current = Math.max(nums[i], current + nums[i]);
+//     maxSum = Math.max(maxSum, current);
+//   }
+
+//   return maxSum;
+// }
+
+
+function mergeSorted(arr1, arr2) {
+  let i = 0, j = 0;
+  const result = [];
+
+  while (i < arr1.length && j < arr2.length) {
+    if (arr1[i] < arr2[j]) result.push(arr1[i++]);
+    else result.push(arr2[j++]);
   }
 
-  return maxSum;
+  return result.concat(arr1.slice(i)).concat(arr2.slice(j));
 }
