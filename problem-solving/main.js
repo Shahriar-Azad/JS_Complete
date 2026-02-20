@@ -817,16 +817,29 @@
 
 
 
-function reverseList(head) {
-  let prev = null;
-  let curr = head;
+// function reverseList(head) {
+//   let prev = null;
+//   let curr = head;
 
-  while (curr) {
-    const next = curr.next;
-    curr.next = prev;
-    prev = curr;
-    curr = next;
+//   while (curr) {
+//     const next = curr.next;
+//     curr.next = prev;
+//     prev = curr;
+//     curr = next;
+//   }
+
+//   return prev;
+// }
+
+
+function maxSubArray(nums) {
+  let maxSum = nums[0];
+  let current = nums[0];
+
+  for (let i = 1; i < nums.length; i++) {
+    current = Math.max(nums[i], current + nums[i]);
+    maxSum = Math.max(maxSum, current);
   }
 
-  return prev;
+  return maxSum;
 }
