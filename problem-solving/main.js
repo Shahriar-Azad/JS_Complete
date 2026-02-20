@@ -796,21 +796,37 @@
 // }
 
 
-function isValid(s) {
-  const stack = [];
-  const map = {
-    ")": "(",
-    "]": "[",
-    "}": "{"
-  };
+// function isValid(s) {
+//   const stack = [];
+//   const map = {
+//     ")": "(",
+//     "]": "[",
+//     "}": "{"
+//   };
 
-  for (const char of s) {
-    if (char === "(" || char === "[" || char === "{") {
-      stack.push(char);
-    } else {
-      if (stack.pop() !== map[char]) return false;
-    }
+//   for (const char of s) {
+//     if (char === "(" || char === "[" || char === "{") {
+//       stack.push(char);
+//     } else {
+//       if (stack.pop() !== map[char]) return false;
+//     }
+//   }
+
+//   return stack.length === 0;
+// }
+
+
+
+function reverseList(head) {
+  let prev = null;
+  let curr = head;
+
+  while (curr) {
+    const next = curr.next;
+    curr.next = prev;
+    prev = curr;
+    curr = next;
   }
 
-  return stack.length === 0;
+  return prev;
 }
