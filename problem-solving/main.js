@@ -845,14 +845,32 @@
 // }
 
 
-function mergeSorted(arr1, arr2) {
-  let i = 0, j = 0;
-  const result = [];
+// function mergeSorted(arr1, arr2) {
+//   let i = 0, j = 0;
+//   const result = [];
 
-  while (i < arr1.length && j < arr2.length) {
-    if (arr1[i] < arr2[j]) result.push(arr1[i++]);
-    else result.push(arr2[j++]);
+//   while (i < arr1.length && j < arr2.length) {
+//     if (arr1[i] < arr2[j]) result.push(arr1[i++]);
+//     else result.push(arr2[j++]);
+//   }
+
+//   return result.concat(arr1.slice(i)).concat(arr2.slice(j));
+// }
+
+
+function lengthOfLongestSubstring(s) {
+  let left = 0;
+  let maxLen = 0;
+  const set = new Set();
+
+  for (let right = 0; right < s.length; right++) {
+    while (set.has(s[right])) {
+      set.delete(s[left]);
+      left++;
+    }
+    set.add(s[right]);
+    maxLen = Math.max(maxLen, right - left + 1);
   }
 
-  return result.concat(arr1.slice(i)).concat(arr2.slice(j));
+  return maxLen;
 }
