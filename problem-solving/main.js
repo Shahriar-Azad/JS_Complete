@@ -889,20 +889,39 @@
 // }
 
 
-function productExceptSelf(nums) {
-  const result = Array(nums.length).fill(1);
-  let prefix = 1;
-  let suffix = 1;
+// function productExceptSelf(nums) {
+//   const result = Array(nums.length).fill(1);
+//   let prefix = 1;
+//   let suffix = 1;
 
-  for (let i = 0; i < nums.length; i++) {
-    result[i] *= prefix;
-    prefix *= nums[i];
+//   for (let i = 0; i < nums.length; i++) {
+//     result[i] *= prefix;
+//     prefix *= nums[i];
+//   }
+
+//   for (let i = nums.length - 1; i >= 0; i--) {
+//     result[i] *= suffix;
+//     suffix *= nums[i];
+//   }
+
+//   return result;
+// }
+
+
+function isAnagram(s, t) {
+  if (s.length !== t.length) return false;
+
+  const count = {};
+
+  for (const ch of s) {
+    count[ch] = (count[ch] || 0) + 1;
   }
 
-  for (let i = nums.length - 1; i >= 0; i--) {
-    result[i] *= suffix;
-    suffix *= nums[i];
+  for (const ch of t) {
+    if (!count[ch]) return false;
+    count[ch]--;
   }
 
-  return result;
+  return true;
 }
+
