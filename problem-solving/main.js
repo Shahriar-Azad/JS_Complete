@@ -927,18 +927,24 @@
 
 
 
-function moveZeroes(nums) {
-  let index = 0;
+// function moveZeroes(nums) {
+//   let index = 0;
 
-  for (let i = 0; i < nums.length; i++) {
-    if (nums[i] !== 0) {
-      nums[index++] = nums[i];
-    }
-  }
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i] !== 0) {
+//       nums[index++] = nums[i];
+//     }
+//   }
 
-  while (index < nums.length) {
-    nums[index++] = 0;
-  }
+//   while (index < nums.length) {
+//     nums[index++] = 0;
+//   }
 
-  return nums;
+//   return nums;
+// }
+
+
+function maxDepth(root) {
+  if (!root) return 0;
+  return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
 }
