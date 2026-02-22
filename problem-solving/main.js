@@ -908,20 +908,37 @@
 // }
 
 
-function isAnagram(s, t) {
-  if (s.length !== t.length) return false;
+// function isAnagram(s, t) {
+//   if (s.length !== t.length) return false;
 
-  const count = {};
+//   const count = {};
 
-  for (const ch of s) {
-    count[ch] = (count[ch] || 0) + 1;
+//   for (const ch of s) {
+//     count[ch] = (count[ch] || 0) + 1;
+//   }
+
+//   for (const ch of t) {
+//     if (!count[ch]) return false;
+//     count[ch]--;
+//   }
+
+//   return true;
+// }
+
+
+
+function moveZeroes(nums) {
+  let index = 0;
+
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] !== 0) {
+      nums[index++] = nums[i];
+    }
   }
 
-  for (const ch of t) {
-    if (!count[ch]) return false;
-    count[ch]--;
+  while (index < nums.length) {
+    nums[index++] = 0;
   }
 
-  return true;
+  return nums;
 }
-
