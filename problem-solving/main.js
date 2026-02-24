@@ -963,13 +963,28 @@
 // }
 
 
-function containsDuplicate(nums) {
-  const set = new Set();
+// function containsDuplicate(nums) {
+//   const set = new Set();
+
+//   for (const num of nums) {
+//     if (set.has(num)) return true;
+//     set.add(num);
+//   }
+
+//   return false;
+// }
+
+
+function majorityElement(nums) {
+  let count = 0;
+  let candidate = null;
 
   for (const num of nums) {
-    if (set.has(num)) return true;
-    set.add(num);
+    if (count === 0) {
+      candidate = num;
+    }
+    count += num === candidate ? 1 : -1;
   }
 
-  return false;
+  return candidate;
 }
