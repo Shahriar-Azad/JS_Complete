@@ -991,9 +991,23 @@
 
 
 
-function missingNumber(nums) {
-  const n = nums.length;
-  const expectedSum = (n * (n + 1)) / 2;
-  const actualSum = nums.reduce((sum, num) => sum + num, 0);
-  return expectedSum - actualSum;
+// function missingNumber(nums) {
+//   const n = nums.length;
+//   const expectedSum = (n * (n + 1)) / 2;
+//   const actualSum = nums.reduce((sum, num) => sum + num, 0);
+//   return expectedSum - actualSum;
+// }
+
+
+function reverseString(s) {
+  let left = 0;
+  let right = s.length - 1;
+
+  while (left < right) {
+    [s[left], s[right]] = [s[right], s[left]];
+    left++;
+    right--;
+  }
+
+  return s;
 }
