@@ -999,15 +999,32 @@
 // }
 
 
-function reverseString(s) {
-  let left = 0;
-  let right = s.length - 1;
+// function reverseString(s) {
+//   let left = 0;
+//   let right = s.length - 1;
 
-  while (left < right) {
-    [s[left], s[right]] = [s[right], s[left]];
-    left++;
-    right--;
+//   while (left < right) {
+//     [s[left], s[right]] = [s[right], s[left]];
+//     left++;
+//     right--;
+//   }
+
+//   return s;
+// }
+
+
+function longestCommonPrefix(strs) {
+  if (!strs.length) return "";
+
+  for (let i = 0; i < strs[0].length; i++) {
+    const char = strs[0][i];
+
+    for (let j = 1; j < strs.length; j++) {
+      if (strs[j][i] !== char) {
+        return strs[0].slice(0, i);
+      }
+    }
   }
 
-  return s;
+  return strs[0];
 }
