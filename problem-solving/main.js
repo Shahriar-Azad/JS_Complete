@@ -975,16 +975,25 @@
 // }
 
 
-function majorityElement(nums) {
-  let count = 0;
-  let candidate = null;
+// function majorityElement(nums) {
+//   let count = 0;
+//   let candidate = null;
 
-  for (const num of nums) {
-    if (count === 0) {
-      candidate = num;
-    }
-    count += num === candidate ? 1 : -1;
-  }
+//   for (const num of nums) {
+//     if (count === 0) {
+//       candidate = num;
+//     }
+//     count += num === candidate ? 1 : -1;
+//   }
 
-  return candidate;
+//   return candidate;
+// }
+
+
+
+function missingNumber(nums) {
+  const n = nums.length;
+  const expectedSum = (n * (n + 1)) / 2;
+  const actualSum = nums.reduce((sum, num) => sum + num, 0);
+  return expectedSum - actualSum;
 }
