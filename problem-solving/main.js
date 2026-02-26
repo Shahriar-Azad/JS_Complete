@@ -1013,18 +1013,40 @@
 // }
 
 
-function longestCommonPrefix(strs) {
-  if (!strs.length) return "";
+// function longestCommonPrefix(strs) {
+//   if (!strs.length) return "";
 
-  for (let i = 0; i < strs[0].length; i++) {
-    const char = strs[0][i];
+//   for (let i = 0; i < strs[0].length; i++) {
+//     const char = strs[0][i];
 
-    for (let j = 1; j < strs.length; j++) {
-      if (strs[j][i] !== char) {
-        return strs[0].slice(0, i);
-      }
+//     for (let j = 1; j < strs.length; j++) {
+//       if (strs[j][i] !== char) {
+//         return strs[0].slice(0, i);
+//       }
+//     }
+//   }
+
+//   return strs[0];
+// }
+
+
+
+function mergeIntervals(intervals) {
+  if (!intervals.length) return [];
+
+  intervals.sort((a, b) => a[0] - b[0]);
+  const result = [intervals[0]];
+
+  for (let i = 1; i < intervals.length; i++) {
+    const last = result[result.length - 1];
+    const current = intervals[i];
+
+    if (current[0] <= last[1]) {
+      last[1] = Math.max(last[1], current[1]);
+    } else {
+      result.push(current);
     }
   }
 
-  return strs[0];
+  return result;
 }
