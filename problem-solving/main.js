@@ -1031,22 +1031,38 @@
 
 
 
-function mergeIntervals(intervals) {
-  if (!intervals.length) return [];
+// function mergeIntervals(intervals) {
+//   if (!intervals.length) return [];
 
-  intervals.sort((a, b) => a[0] - b[0]);
-  const result = [intervals[0]];
+//   intervals.sort((a, b) => a[0] - b[0]);
+//   const result = [intervals[0]];
 
-  for (let i = 1; i < intervals.length; i++) {
-    const last = result[result.length - 1];
-    const current = intervals[i];
+//   for (let i = 1; i < intervals.length; i++) {
+//     const last = result[result.length - 1];
+//     const current = intervals[i];
 
-    if (current[0] <= last[1]) {
-      last[1] = Math.max(last[1], current[1]);
-    } else {
-      result.push(current);
-    }
+//     if (current[0] <= last[1]) {
+//       last[1] = Math.max(last[1], current[1]);
+//     } else {
+//       result.push(current);
+//     }
+//   }
+
+//   return result;
+// }
+
+
+function climbStairs(n) {
+  if (n <= 2) return n;
+
+  let prev1 = 1;
+  let prev2 = 2;
+
+  for (let i = 3; i <= n; i++) {
+    const current = prev1 + prev2;
+    prev1 = prev2;
+    prev2 = current;
   }
 
-  return result;
+  return prev2;
 }
