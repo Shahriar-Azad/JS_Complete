@@ -1052,17 +1052,39 @@
 // }
 
 
-function climbStairs(n) {
-  if (n <= 2) return n;
+// function climbStairs(n) {
+//   if (n <= 2) return n;
 
-  let prev1 = 1;
-  let prev2 = 2;
+//   let prev1 = 1;
+//   let prev2 = 2;
 
-  for (let i = 3; i <= n; i++) {
-    const current = prev1 + prev2;
-    prev1 = prev2;
-    prev2 = current;
+//   for (let i = 3; i <= n; i++) {
+//     const current = prev1 + prev2;
+//     prev1 = prev2;
+//     prev2 = current;
+//   }
+
+//   return prev2;
+// }
+
+
+function longestConsecutive(nums) {
+  const set = new Set(nums);
+  let longest = 0;
+
+  for (const num of set) {
+    if (!set.has(num - 1)) {
+      let current = num;
+      let streak = 1;
+
+      while (set.has(current + 1)) {
+        current++;
+        streak++;
+      }
+
+      longest = Math.max(longest, streak);
+    }
   }
 
-  return prev2;
+  return longest;
 }
