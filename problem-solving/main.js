@@ -1090,17 +1090,36 @@
 // }
 
 
-function maxArea(height) {
-  let left = 0;
-  let right = height.length - 1;
-  let max = 0;
+// function maxArea(height) {
+//   let left = 0;
+//   let right = height.length - 1;
+//   let max = 0;
 
-  while (left < right) {
-    const area = Math.min(height[left], height[right]) * (right - left);
-    max = Math.max(max, area);
+//   while (left < right) {
+//     const area = Math.min(height[left], height[right]) * (right - left);
+//     max = Math.max(max, area);
 
-    height[left] < height[right] ? left++ : right--;
+//     height[left] < height[right] ? left++ : right--;
+//   }
+
+//   return max;
+// }
+
+
+function subarraySum(nums, k) {
+  const map = new Map();
+  map.set(0, 1);
+
+  let sum = 0;
+  let count = 0;
+
+  for (const num of nums) {
+    sum += num;
+    if (map.has(sum - k)) {
+      count += map.get(sum - k);
+    }
+    map.set(sum, (map.get(sum) || 0) + 1);
   }
 
-  return max;
+  return count;
 }
