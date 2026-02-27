@@ -1068,23 +1068,39 @@
 // }
 
 
-function longestConsecutive(nums) {
-  const set = new Set(nums);
-  let longest = 0;
+// function longestConsecutive(nums) {
+//   const set = new Set(nums);
+//   let longest = 0;
 
-  for (const num of set) {
-    if (!set.has(num - 1)) {
-      let current = num;
-      let streak = 1;
+//   for (const num of set) {
+//     if (!set.has(num - 1)) {
+//       let current = num;
+//       let streak = 1;
 
-      while (set.has(current + 1)) {
-        current++;
-        streak++;
-      }
+//       while (set.has(current + 1)) {
+//         current++;
+//         streak++;
+//       }
 
-      longest = Math.max(longest, streak);
-    }
+//       longest = Math.max(longest, streak);
+//     }
+//   }
+
+//   return longest;
+// }
+
+
+function maxArea(height) {
+  let left = 0;
+  let right = height.length - 1;
+  let max = 0;
+
+  while (left < right) {
+    const area = Math.min(height[left], height[right]) * (right - left);
+    max = Math.max(max, area);
+
+    height[left] < height[right] ? left++ : right--;
   }
 
-  return longest;
+  return max;
 }
