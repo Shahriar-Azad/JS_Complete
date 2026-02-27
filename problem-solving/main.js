@@ -1106,20 +1106,47 @@
 // }
 
 
-function subarraySum(nums, k) {
-  const map = new Map();
-  map.set(0, 1);
+// function subarraySum(nums, k) {
+//   const map = new Map();
+//   map.set(0, 1);
 
-  let sum = 0;
-  let count = 0;
+//   let sum = 0;
+//   let count = 0;
 
-  for (const num of nums) {
-    sum += num;
-    if (map.has(sum - k)) {
-      count += map.get(sum - k);
+//   for (const num of nums) {
+//     sum += num;
+//     if (map.has(sum - k)) {
+//       count += map.get(sum - k);
+//     }
+//     map.set(sum, (map.get(sum) || 0) + 1);
+//   }
+
+//   return count;
+// }
+
+function search(nums, target) {
+  let left = 0;
+  let right = nums.length - 1;
+
+  while (left <= right) {
+    const mid = Math.floor((left + right) / 2);
+    if (nums[mid] === target) return mid;
+
+    if (nums[left] <= nums[mid]) {
+      if (target >= nums[left] && target < nums[mid]) {
+        right = mid - 1;
+      } else {
+        left = mid + 1;
+      }
+    } else {
+      if (target > nums[mid] && target <= nums[right]) {
+        left = mid + 1;
+      } else {
+        right = mid - 1;
+      }
     }
-    map.set(sum, (map.get(sum) || 0) + 1);
   }
 
-  return count;
+  return -1;
 }
+
