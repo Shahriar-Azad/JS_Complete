@@ -1183,7 +1183,28 @@
 
 
 
-function findKthLargest(nums, k) {
-  nums.sort((a, b) => b - a);
-  return nums[k - 1];
+// function findKthLargest(nums, k) {
+//   nums.sort((a, b) => b - a);
+//   return nums[k - 1];
+// }
+
+
+function evalRPN(tokens) {
+  const stack = [];
+
+  for (const token of tokens) {
+    if (!isNaN(token)) {
+      stack.push(Number(token));
+    } else {
+      const b = stack.pop();
+      const a = stack.pop();
+
+      if (token === "+") stack.push(a + b);
+      if (token === "-") stack.push(a - b);
+      if (token === "*") stack.push(a * b);
+      if (token === "/") stack.push(Math.trunc(a / b));
+    }
+  }
+
+  return stack.pop();
 }
