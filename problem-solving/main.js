@@ -1189,22 +1189,54 @@
 // }
 
 
-function evalRPN(tokens) {
-  const stack = [];
+// function evalRPN(tokens) {
+//   const stack = [];
 
-  for (const token of tokens) {
-    if (!isNaN(token)) {
-      stack.push(Number(token));
-    } else {
-      const b = stack.pop();
-      const a = stack.pop();
+//   for (const token of tokens) {
+//     if (!isNaN(token)) {
+//       stack.push(Number(token));
+//     } else {
+//       const b = stack.pop();
+//       const a = stack.pop();
 
-      if (token === "+") stack.push(a + b);
-      if (token === "-") stack.push(a - b);
-      if (token === "*") stack.push(a * b);
-      if (token === "/") stack.push(Math.trunc(a / b));
+//       if (token === "+") stack.push(a + b);
+//       if (token === "-") stack.push(a - b);
+//       if (token === "*") stack.push(a * b);
+//       if (token === "/") stack.push(Math.trunc(a / b));
+//     }
+//   }
+
+//   return stack.pop();
+// }
+
+
+
+function minWindow(s, t) {
+  if (!s || !t) return "";
+
+  const need = {};
+  for (const ch of t) need[ch] = (need[ch] || 0) + 1;
+
+  let left = 0;
+  let count = t.length;
+  let minLen = Infinity;
+  let start = 0;
+
+  for (let right = 0; right < s.length; right++) {
+    if (need[s[right]] > 0) count--;
+    need[s[right]] = (need[s[right]] || 0) - 1;
+
+    while (count === 0) {
+      if (right - left + 1 < minLen) {
+        minLen = right - left + 1;
+        start = left;
+      }
+
+      need[s[left]]++;
+      if (need[s[left]] > 0) count++;
+      left++;
     }
   }
 
-  return stack.pop();
+  return minLen === Infinity ? "" : s.substr(start, minLen);
 }
