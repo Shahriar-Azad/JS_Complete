@@ -1211,32 +1211,48 @@
 
 
 
-function minWindow(s, t) {
-  if (!s || !t) return "";
+// function minWindow(s, t) {
+//   if (!s || !t) return "";
 
-  const need = {};
-  for (const ch of t) need[ch] = (need[ch] || 0) + 1;
+//   const need = {};
+//   for (const ch of t) need[ch] = (need[ch] || 0) + 1;
 
-  let left = 0;
-  let count = t.length;
-  let minLen = Infinity;
-  let start = 0;
+//   let left = 0;
+//   let count = t.length;
+//   let minLen = Infinity;
+//   let start = 0;
 
-  for (let right = 0; right < s.length; right++) {
-    if (need[s[right]] > 0) count--;
-    need[s[right]] = (need[s[right]] || 0) - 1;
+//   for (let right = 0; right < s.length; right++) {
+//     if (need[s[right]] > 0) count--;
+//     need[s[right]] = (need[s[right]] || 0) - 1;
 
-    while (count === 0) {
-      if (right - left + 1 < minLen) {
-        minLen = right - left + 1;
-        start = left;
-      }
+//     while (count === 0) {
+//       if (right - left + 1 < minLen) {
+//         minLen = right - left + 1;
+//         start = left;
+//       }
 
-      need[s[left]]++;
-      if (need[s[left]] > 0) count++;
-      left++;
-    }
+//       need[s[left]]++;
+//       if (need[s[left]] > 0) count++;
+//       left++;
+//     }
+//   }
+
+//   return minLen === Infinity ? "" : s.substr(start, minLen);
+// }
+
+
+
+function firstNonRepeatingChar(s) {
+  const freq = {};
+
+  for (let ch of s) {
+    freq[ch] = (freq[ch] || 0) + 1;
   }
 
-  return minLen === Infinity ? "" : s.substr(start, minLen);
+  for (let ch of s) {
+    if (freq[ch] === 1) return ch;
+  }
+
+  return -1;
 }
