@@ -1243,16 +1243,33 @@
 
 
 
-function firstNonRepeatingChar(s) {
-  const freq = {};
+// function firstNonRepeatingChar(s) {
+//   const freq = {};
 
-  for (let ch of s) {
-    freq[ch] = (freq[ch] || 0) + 1;
+//   for (let ch of s) {
+//     freq[ch] = (freq[ch] || 0) + 1;
+//   }
+
+//   for (let ch of s) {
+//     if (freq[ch] === 1) return ch;
+//   }
+
+//   return -1;
+// }
+
+
+function moveZeros(nums) {
+  let index = 0;
+
+  for (let num of nums) {
+    if (num !== 0) {
+      nums[index++] = num;
+    }
   }
 
-  for (let ch of s) {
-    if (freq[ch] === 1) return ch;
+  while (index < nums.length) {
+    nums[index++] = 0;
   }
 
-  return -1;
+  return nums;
 }
