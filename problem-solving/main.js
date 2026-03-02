@@ -1258,18 +1258,31 @@
 // }
 
 
-function moveZeros(nums) {
-  let index = 0;
+// function moveZeros(nums) {
+//   let index = 0;
 
-  for (let num of nums) {
-    if (num !== 0) {
-      nums[index++] = num;
-    }
+//   for (let num of nums) {
+//     if (num !== 0) {
+//       nums[index++] = num;
+//     }
+//   }
+
+//   while (index < nums.length) {
+//     nums[index++] = 0;
+//   }
+
+//   return nums;
+// }
+
+
+function isPrime(num) {
+  if (num <= 1) return false;
+
+  for (let i = 2; i <= Math.sqrt(num); i++) {
+    if (num % i === 0) return false;
   }
 
-  while (index < nums.length) {
-    nums[index++] = 0;
-  }
-
-  return nums;
+  return true;
 }
+
+console.log(isPrime(17));
