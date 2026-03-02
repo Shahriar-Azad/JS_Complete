@@ -1287,15 +1287,22 @@
 
 // console.log(isPrime(17));
 
-function factorial(n) {
-  if (n < 0) return "Invalid input";
+// function factorial(n) {
+//   if (n < 0) return "Invalid input";
 
-  let result = 1;
-  for (let i = 2; i <= n; i++) {
-    result *= i;
-  }
+//   let result = 1;
+//   for (let i = 2; i <= n; i++) {
+//     result *= i;
+//   }
 
-  return result;
+//   return result;
+// }
+
+// console.log(factorial(5));
+
+
+function findLargest(arr) {
+  return Math.max(...arr);
 }
 
-console.log(factorial(5));
+console.log(findLargest([10, 5, 25, 8, 14]));
