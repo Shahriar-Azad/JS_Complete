@@ -1275,14 +1275,27 @@
 // }
 
 
-function isPrime(num) {
-  if (num <= 1) return false;
+// function isPrime(num) {
+//   if (num <= 1) return false;
 
-  for (let i = 2; i <= Math.sqrt(num); i++) {
-    if (num % i === 0) return false;
+//   for (let i = 2; i <= Math.sqrt(num); i++) {
+//     if (num % i === 0) return false;
+//   }
+
+//   return true;
+// }
+
+// console.log(isPrime(17));
+
+function factorial(n) {
+  if (n < 0) return "Invalid input";
+
+  let result = 1;
+  for (let i = 2; i <= n; i++) {
+    result *= i;
   }
 
-  return true;
+  return result;
 }
 
-console.log(isPrime(17));
+console.log(factorial(5));
